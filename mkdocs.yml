@@ -14,5 +14,7 @@ nav:
       - AplosSettingsManager: aplos-settings-manager.md
       - AplosWindowManager: aplos-window-manager.md
       - AplosWindowSettings: aplos-window-settings.md
+  - Command System:
+      - AplosDebugCommand: aplos-debug-command.md
   - Changelog: changelog.md
   - About: about.md
