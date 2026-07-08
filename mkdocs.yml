@@ -1,5 +1,8 @@
 site_name: Aplos Console
 
+theme:
+  name: readthedocs
+
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
