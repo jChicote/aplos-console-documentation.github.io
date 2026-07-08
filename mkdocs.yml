@@ -10,6 +10,7 @@ nav:
   - Console:
       - Overview: console.md
       - AplosConsole: aplos-console.md
+      - AplosInputManager: aplos-input-manager.md
       - AplosSettingsManager: aplos-settings-manager.md
       - AplosWindowSettings: aplos-window-settings.md
   - Changelog: changelog.md
