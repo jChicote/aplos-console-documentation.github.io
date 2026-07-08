@@ -7,6 +7,8 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Manual: manual.md
-  - Console: console.md
+  - Console:
+      - Overview: console.md
+      - AplosConsole: aplos-console.md
   - Changelog: changelog.md
   - About: about.md
