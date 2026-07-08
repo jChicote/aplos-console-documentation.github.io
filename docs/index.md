@@ -1,17 +1,10 @@
-# Welcome to MkDocs
+# Aplos Console
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welcome to the official documentation for **Aplos Console** — an in-game developer console for Unity.
 
-## Commands
+Use the navigation bar to find what you need:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- **[Getting Started](getting-started.md)** — installation, setup, and your first command.
+- **[Manual](manual.md)** — in-depth guides covering every feature.
+- **[Console](console.md)** — reference for built-in commands, syntax, and the API.
+- **[Changelog](changelog.md)** — release history and version notes.

@@ -1,1 +1,8 @@
-site_name: My Docs
+site_name: Aplos Console
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Manual: manual.md
+  - Console: console.md
+  - Changelog: changelog.md
