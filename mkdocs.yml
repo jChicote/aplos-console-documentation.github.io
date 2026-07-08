@@ -11,5 +11,6 @@ nav:
       - Overview: console.md
       - AplosConsole: aplos-console.md
       - AplosSettingsManager: aplos-settings-manager.md
+      - AplosWindowSettings: aplos-window-settings.md
   - Changelog: changelog.md
   - About: about.md
