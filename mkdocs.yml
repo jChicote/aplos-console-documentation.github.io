@@ -12,8 +12,6 @@ nav:
   - Console:
       - Overview: console.md
       - AplosConsole: aplos-console.md
-      - AplosInputManager: aplos-input-manager.md
-      - AplosSettingsManager: aplos-settings-manager.md
       - AplosWindowManager: aplos-window-manager.md
       - AplosWindowSettings: aplos-window-settings.md
   - Command System:
@@ -21,3 +19,7 @@ nav:
       - Interfaces: command-system-interfaces.md
   - Color Picker:
       - AplosColorPickerView: aplos-color-picker-view.md
+  - Settings:
+      - AplosSettingsManager: aplos-settings-manager.md
+  - Input:
+      - AplosInputManager: aplos-input-manager.md
