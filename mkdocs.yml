@@ -19,3 +19,5 @@ nav:
   - Command System:
       - AplosDebugCommand: aplos-debug-command.md
       - Interfaces: command-system-interfaces.md
+  - Color Picker:
+      - AplosColorPickerView: aplos-color-picker-view.md
