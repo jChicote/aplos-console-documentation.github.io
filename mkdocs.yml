@@ -19,7 +19,10 @@ nav:
       - Interfaces: command-system-interfaces.md
   - Color Picker:
       - AplosColorPickerView: aplos-color-picker-view.md
+      - Interfaces: color-picker-interfaces.md
   - Settings:
       - AplosSettingsManager: aplos-settings-manager.md
+      - Interfaces: settings-interfaces.md
   - Input:
       - AplosInputManager: aplos-input-manager.md
+      - Interfaces: input-interfaces.md
