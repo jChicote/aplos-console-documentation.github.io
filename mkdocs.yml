@@ -18,3 +18,4 @@ nav:
       - AplosWindowSettings: aplos-window-settings.md
   - Command System:
       - AplosDebugCommand: aplos-debug-command.md
+      - Interfaces: command-system-interfaces.md
