@@ -20,11 +20,31 @@ text and exposes them read-only; it carries no executable delegate of its own.
 | `CommandDescription` | Human-readable description shown in the command list and help output. Read-only. |
 | `CommandFormat` | Usage/format string describing the command's expected arguments. Read-only. |
 
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public string CommandId { get; }
+public string CommandDescription { get; }
+public string CommandFormat { get; }
+```
+
+</details>
+
 ### Constructors
 
-| Signature | Description |
+| Name | Description |
 | --- | --- |
-| `AplosDebugCommandBase(string commandId, string commandDescription, string commandFormat)` | Initialises the shared metadata. Normally called via `base(...)` from a derived `AplosDebugCommand` variant rather than directly. |
+| `AplosDebugCommandBase` | Initialises the shared metadata. Normally called via `base(...)` from a derived `AplosDebugCommand` variant rather than directly. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public AplosDebugCommandBase(string commandId, string commandDescription, string commandFormat);
+```
+
+</details>
 
 ## AplosDebugCommand
 
@@ -38,17 +58,44 @@ arguments.
 | `IsBuiltIn` | Marks the command as one that ships with the console (as opposed to a user-registered command). Defaults to `false`. Get/set. |
 | _Inherited_ | `CommandId`, `CommandDescription`, and `CommandFormat` from `AplosDebugCommandBase`. |
 
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public bool IsBuiltIn { get; set; }
+```
+
+</details>
+
 ### Constructors
 
-| Signature | Description |
+| Name | Description |
 | --- | --- |
-| `AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action command, bool isBuiltIn = false)` | Builds a parameterless command from the given metadata and action. Pass `isBuiltIn: true` to flag it as a built-in command. |
+| `AplosDebugCommand` | Builds a parameterless command from the given metadata and action. Pass `isBuiltIn: true` to flag it as a built-in command. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action command, bool isBuiltIn = false);
+```
+
+</details>
 
 ### Public methods
 
 | Name | Description |
 | --- | --- |
-| `Invoke()` | Executes the wrapped action. No-op if the action is `null`. |
+| `Invoke` | Executes the wrapped action. No-op if the action is `null`. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public void Invoke();
+```
+
+</details>
 
 ## AplosDebugCommand&lt;T&gt;
 
@@ -63,15 +110,33 @@ console input.
 
 ### Constructors
 
-| Signature | Description |
+| Name | Description |
 | --- | --- |
-| `AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action<T> command)` | Builds a command from the given metadata that forwards a single typed argument to `command`. |
+| `AplosDebugCommand` | Builds a command from the given metadata that forwards a single typed argument to `command`. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action<T> command);
+```
+
+</details>
 
 ### Public methods
 
 | Name | Description |
 | --- | --- |
-| `Invoke(T value)` | Executes the wrapped action with the supplied argument. No-op if the action is `null`. |
+| `Invoke` | Executes the wrapped action with the supplied argument. No-op if the action is `null`. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public void Invoke(T value);
+```
+
+</details>
 
 ## AplosDebugCommand&lt;T1, T2&gt;
 
@@ -86,12 +151,30 @@ the console input.
 
 ### Constructors
 
-| Signature | Description |
+| Name | Description |
 | --- | --- |
-| `AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action<T1, T2> command)` | Builds a command from the given metadata that forwards two typed arguments to `command`. |
+| `AplosDebugCommand` | Builds a command from the given metadata that forwards two typed arguments to `command`. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action<T1, T2> command);
+```
+
+</details>
 
 ### Public methods
 
 | Name | Description |
 | --- | --- |
-| `Invoke(T1 value, T2 value2)` | Executes the wrapped action with the two supplied arguments. No-op if the action is `null`. |
+| `Invoke` | Executes the wrapped action with the two supplied arguments. No-op if the action is `null`. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public void Invoke(T1 value, T2 value2);
+```
+
+</details>

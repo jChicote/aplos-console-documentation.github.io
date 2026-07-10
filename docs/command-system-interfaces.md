@@ -16,8 +16,18 @@ and unregistered. Implemented by [AplosConsole](aplos-console.md).
 
 | Name | Description |
 | --- | --- |
-| `RegisterCommand(AplosDebugCommandBase command)` | Registers a command so that it is collected and presented in the console's command display list. See [AplosDebugCommand](aplos-debug-command.md) for the command types. |
-| `UnregisterCommand(string id)` | Removes any previously registered command matching the supplied identifier (its `CommandId`) from the command display list. |
+| `RegisterCommand` | Registers a command so that it is collected and presented in the console's command display list. See [AplosDebugCommand](aplos-debug-command.md) for the command types. |
+| `UnregisterCommand` | Removes any previously registered command matching the supplied identifier (its `CommandId`) from the command display list. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+void RegisterCommand(AplosDebugCommandBase command);
+void UnregisterCommand(string id);
+```
+
+</details>
 
 ## IConsoleCommandRegistrator
 
@@ -29,4 +39,13 @@ contribute commands to the console.
 
 | Name | Description |
 | --- | --- |
-| `RegisterCommand(IConsoleCommandSystem consoleCommandSystem)` | Registers the implementer's commands through the supplied command system. |
+| `RegisterCommand` | Registers the implementer's commands through the supplied command system. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+void RegisterCommand(IConsoleCommandSystem consoleCommandSystem);
+```
+
+</details>

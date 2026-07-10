@@ -13,4 +13,13 @@ via callbacks.
 
 | Name | Description |
 | --- | --- |
-| `Show(Color initial, UnityAction<Color> onApply, UnityAction onCancel = null)` | Opens the color picker with the given initial color (R, G, B, A), invoking `onApply` once the color is applied or `onCancel` if the picker is cancelled. |
+| `Show` | Opens the color picker with the given initial color (R, G, B, A), invoking `onApply` once the color is applied or `onCancel` if the picker is cancelled. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+void Show(Color initial, UnityAction<Color> onApply, UnityAction onCancel = null);
+```
+
+</details>

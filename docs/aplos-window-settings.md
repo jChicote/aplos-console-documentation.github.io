@@ -22,6 +22,26 @@ colours, the resize bounds, the logo presentation, and the window scale. It is a
 | `ScaledCanvas` | The `Canvas` whose reference resolution is scaled by `WindowScale`. |
 | `WindowScale` | Multiplier applied to the canvas reference resolution. Range 1–10. |
 
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public static AplosWindowSettings Instance { get; }
+public Color barBackgroundColor;
+public Color closeButtonColor;
+public Color collapseButtonColor;
+public Color settingsButtonColor;
+public int MinWidth;
+public int MaxWidth;
+public int MinHeight;
+public int MaxHeight;
+public float SmallLogoWidthThreshold;
+public Canvas ScaledCanvas;
+public float WindowScale;
+```
+
+</details>
+
 ## Events
 
 _This class exposes no events._
@@ -30,14 +50,30 @@ _This class exposes no events._
 
 | Name | Description |
 | --- | --- |
-| `Register(AplosWindowHandler handler)` | Registers a window so it tracks the shared colours, and applies the current colours to it straight away. |
-| `Unregister(AplosWindowHandler handler)` | Stops a window handler from tracking the shared colours. |
-| `ApplyColorSettings()` | Re-applies the current bar colours to every registered window handler. Implements `IColorSettingsApplicable`. |
-| `Register(WindowResizingHandler handler)` | Registers a resizer so it tracks the shared bounds, and seeds it with the current bounds straight away. |
-| `Unregister(WindowResizingHandler handler)` | Stops a resizer from tracking the shared bounds. |
-| `ApplySettings()` | Applies derived settings: re-seeds the resize bounds, refreshes logo views against the width threshold, and applies the window scale. Implements `ISettingsApplicable`. |
-| `Register(WindowLogoView view)` | Registers a logo view so it tracks the shared width threshold, and seeds it with the current value straight away. |
-| `Unregister(WindowLogoView view)` | Stops a logo view from tracking the shared width threshold. |
+| `Register` | Registers a window so it tracks the shared colours, and applies the current colours to it straight away. |
+| `Unregister` | Stops a window handler from tracking the shared colours. |
+| `ApplyColorSettings` | Re-applies the current bar colours to every registered window handler. Implements `IColorSettingsApplicable`. |
+| `Register` | Registers a resizer so it tracks the shared bounds, and seeds it with the current bounds straight away. |
+| `Unregister` | Stops a resizer from tracking the shared bounds. |
+| `ApplySettings` | Applies derived settings: re-seeds the resize bounds, refreshes logo views against the width threshold, and applies the window scale. Implements `ISettingsApplicable`. |
+| `Register` | Registers a logo view so it tracks the shared width threshold, and seeds it with the current value straight away. |
+| `Unregister` | Stops a logo view from tracking the shared width threshold. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public void Register(AplosWindowHandler handler);
+public void Unregister(AplosWindowHandler handler);
+public void ApplyColorSettings();
+public void Register(WindowResizingHandler handler);
+public void Unregister(WindowResizingHandler handler);
+public void ApplySettings();
+public void Register(WindowLogoView view);
+public void Unregister(WindowLogoView view);
+```
+
+</details>
 
 ## Static methods
 

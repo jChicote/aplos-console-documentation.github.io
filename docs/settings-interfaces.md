@@ -17,7 +17,16 @@ managed by the [AplosSettingsManager](aplos-settings-manager.md).
 
 | Name | Description |
 | --- | --- |
-| `ResetToDefaults()` | Discards persisted state and restores authored defaults, on disk and live. |
+| `ResetToDefaults` | Discards persisted state and restores authored defaults, on disk and live. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+void ResetToDefaults();
+```
+
+</details>
 
 ## ISettingsApplicable
 
@@ -27,7 +36,16 @@ Generalised apply-hook contract for pushing loaded field values into live runtim
 
 | Name | Description |
 | --- | --- |
-| `ApplySettings()` | Pushes loaded field values into live runtime state. Excludes the color state of the given UI element. |
+| `ApplySettings` | Pushes loaded field values into live runtime state. Excludes the color state of the given UI element. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+void ApplySettings();
+```
+
+</details>
 
 ## ISettingsService
 
@@ -41,11 +59,30 @@ object.
 | `HasLoadedSettings` | True once a saved configuration has been loaded and pushed to visuals. |
 | `SettingsLoaded` | `UnityEvent` raised after each load so consumers can (re)apply without ordering assumptions. |
 
+<details>
+<summary>Declarations</summary>
+
+```csharp
+bool HasLoadedSettings { get; }
+UnityEvent SettingsLoaded { get; }
+```
+
+</details>
+
 ### Methods
 
 | Name | Description |
 | --- | --- |
-| `ApplySettingsTo(GameObject root, bool includeChildren = true)` | Applies the persisted settings to a freshly spawned object (e.g. a runtime window). |
+| `ApplySettingsTo` | Applies the persisted settings to a freshly spawned object (e.g. a runtime window). |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+void ApplySettingsTo(GameObject root, bool includeChildren = true);
+```
+
+</details>
 
 ## ISettingsStore
 
@@ -56,5 +93,15 @@ backing store (file, prefs, ...) from the settings manager that serializes and a
 
 | Name | Description |
 | --- | --- |
-| `TryLoad(out string json)` | Returns the stored JSON when a saved configuration exists and could be read; returns `false` (with the defaults left in place) otherwise. |
-| `Save(string json)` | Persists the given JSON to the backing store. |
+| `TryLoad` | Returns the stored JSON when a saved configuration exists and could be read; returns `false` (with the defaults left in place) otherwise. |
+| `Save` | Persists the given JSON to the backing store. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+bool TryLoad(out string json);
+void Save(string json);
+```
+
+</details>

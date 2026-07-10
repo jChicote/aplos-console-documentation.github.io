@@ -12,6 +12,16 @@ is the single source of truth and everything else is derived from it on each ref
 | `CurrentColor` | The currently selected color, computed from the internal HSVA state. |
 | `WindowIcon` | The icon shown in the host window's title bar. |
 
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public Color CurrentColor { get; }
+public Sprite WindowIcon { get; }
+```
+
+</details>
+
 ## Events
 
 | Name | Description |
@@ -20,14 +30,37 @@ is the single source of truth and everything else is derived from it on each ref
 | `onApplied` | Raised when the apply button is clicked (or the `Show` callback fires), passing the committed color. |
 | `onCancelled` | Raised when the cancel button is clicked (or the `Show` callback fires). |
 
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public ColorChangedEvent onColorChanged;
+public ColorChangedEvent onApplied;
+public UnityEvent onCancelled;
+```
+
+</details>
+
 ## Public methods
 
 | Name | Description |
 | --- | --- |
-| `Show(Color initial, UnityAction<Color> onApply, UnityAction onCancel = null)` | Opens the picker with the given initial color, temporarily wiring the supplied callbacks to `onApplied`/`onCancelled` for this session only. |
-| `Provide()` | Returns the `WindowIcon` sprite; implements `IWindowIconProvider`. |
-| `Commit()` | Accepts the current color as the new baseline, updating the "old" preview swatch. |
-| `Cancel()` | Reverts the picker back to the initial color. |
+| `Show` | Opens the picker with the given initial color, temporarily wiring the supplied callbacks to `onApplied`/`onCancelled` for this session only. |
+| `Provide` | Returns the `WindowIcon` sprite; implements `IWindowIconProvider`. |
+| `Commit` | Accepts the current color as the new baseline, updating the "old" preview swatch. |
+| `Cancel` | Reverts the picker back to the initial color. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public void Show(Color initial, UnityAction<Color> onApply, UnityAction onCancel = null);
+public Sprite Provide();
+public void Commit();
+public void Cancel();
+```
+
+</details>
 
 ## Static methods
 

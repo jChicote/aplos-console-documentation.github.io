@@ -14,8 +14,18 @@ disabling an input action map.
 
 | Name | Description |
 | --- | --- |
-| `HandleConsoleOpen()` | Invoked when the console opens. |
-| `HandleConsoleClose()` | Invoked when the console closes. |
+| `HandleConsoleOpen` | Invoked when the console opens. |
+| `HandleConsoleClose` | Invoked when the console closes. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+void HandleConsoleOpen();
+void HandleConsoleClose();
+```
+
+</details>
 
 ## IAplosConsoleInputAdapter
 
@@ -27,5 +37,15 @@ for wiring up and tearing down against an `IConsoleInputProvider`.
 
 | Name | Description |
 | --- | --- |
-| `Initialise(IConsoleInputProvider inputProvider)` | Wires the adapter up to the given console input provider. |
-| `Dispose()` | Tears down the adapter, releasing any resources or bindings it holds. |
+| `Initialise` | Wires the adapter up to the given console input provider. |
+| `Dispose` | Tears down the adapter, releasing any resources or bindings it holds. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+void Initialise(IConsoleInputProvider inputProvider);
+void Dispose();
+```
+
+</details>

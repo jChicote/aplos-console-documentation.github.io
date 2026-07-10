@@ -17,6 +17,19 @@ scene it spawns a temporary debug-specific one from the configured prefab. It is
 | `_debugInputBindings` | Required dependency. Serialized list of `DebugInputActionMapper`s, one per control scheme. The manager selects the mapper whose `SchemaName` matches the active control scheme and binds its input. |
 | `_settings` | Required dependency. Serialized reference to the `AplosCommandConfiguration` asset, used to instantiate the fallback `PlayerInputPrefab` when no `PlayerInput` is found in the scene. |
 
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public static AplosInputManager Instance { get; private set; }
+public PlayerInput PlayerInput { get; set; }
+public IAplosConsoleInputAdapter ActiveConsoleInputAdapter { get; private set; }
+[SerializeField] private List<DebugInputActionMapper> _debugInputBindings;
+[SerializeField] private AplosCommandConfiguration _settings;
+```
+
+</details>
+
 ## Events
 
 _This class exposes no events._
@@ -25,7 +38,16 @@ _This class exposes no events._
 
 | Name | Description |
 | --- | --- |
-| `StartPlayerInput()` | Entry point that activates console input. Finds an existing `PlayerInput` in the scene and initialises the console bindings against it; if none exists, spawns a temporary debug-specific `PlayerInput` from the configured prefab and initialises against that. If no `DebugInputActionMapper` matches the active control scheme, a warning is logged and no binding is applied. |
+| `StartPlayerInput` | Entry point that activates console input. Finds an existing `PlayerInput` in the scene and initialises the console bindings against it; if none exists, spawns a temporary debug-specific `PlayerInput` from the configured prefab and initialises against that. If no `DebugInputActionMapper` matches the active control scheme, a warning is logged and no binding is applied. |
+
+<details>
+<summary>Declarations</summary>
+
+```csharp
+public void StartPlayerInput();
+```
+
+</details>
 
 ## Static methods
 
