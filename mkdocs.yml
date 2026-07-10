@@ -3,6 +3,9 @@ site_name: Aplos Console
 theme:
   name: readthedocs
 
+extra_css:
+  - css/extra.css
+
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
