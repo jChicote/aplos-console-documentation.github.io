@@ -65,7 +65,7 @@ object
 
 ## Public methods
 
-### `OpenConsole`
+## `OpenConsole`
 
 **Example**
 
@@ -77,7 +77,7 @@ AplosConsole.Instance.OpenConsole();
 
 <br>
 
-### `CloseConsole`
+## `CloseConsole`
 
 **Example**
 
@@ -89,7 +89,7 @@ AplosConsole.Instance.CloseConsole();
 
 <br>
 
-### `RegisterCommand`
+## `RegisterCommand`
 
 **Parameters:**
 
@@ -106,7 +106,7 @@ AplosConsole.Instance.RegisterCommand(command);
 
 <br>
 
-### `RegisterCommand`
+## `RegisterCommand`
 
 **Parameters:**
 
@@ -126,7 +126,7 @@ AplosDebugCommand command = AplosConsole.Instance.RegisterCommand(
 
 <br>
 
-### `UnregisterCommand`
+## `UnregisterCommand`
 
 **Parameters:**
 
@@ -142,7 +142,7 @@ AplosConsole.Instance.UnregisterCommand("hello");
 
 <br>
 
-### `RefreshCommands`
+## `RefreshCommands`
 
 **Example**
 
@@ -154,7 +154,7 @@ AplosConsole.Instance.RefreshCommands();
 
 <br>
 
-### `AutoCompletePressed`
+## `AutoCompletePressed`
 
 **Example**
 
@@ -166,7 +166,7 @@ AplosConsole.Instance.AutoCompletePressed();
 
 <br>
 
-### `SubmitPressed`
+## `SubmitPressed`
 
 **Example**
 
@@ -178,7 +178,7 @@ AplosConsole.Instance.SubmitPressed();
 
 <br>
 
-### `NavigatePressed`
+## `NavigatePressed`
 
 **Parameters:**
 
@@ -194,7 +194,7 @@ AplosConsole.Instance.NavigatePressed(1);
 
 <br>
 
-### `ToggleDebug`
+## `ToggleDebug`
 
 **Example**
 
@@ -203,3 +203,5 @@ AplosConsole.Instance.ToggleDebug();
 ```
 
 **Description:** Signals a request to toggle the console's visibility open or closed.
+
+<br>
