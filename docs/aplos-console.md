@@ -64,7 +64,7 @@ object
 
 ## Public methods
 
-## `OpenConsole`
+<h2 id="openconsole"><code>OpenConsole</code></h2>
 
 **Example**
 
@@ -76,7 +76,7 @@ AplosConsole.Instance.OpenConsole();
 
 <br>
 
-## `CloseConsole`
+<h2 id="closeconsole"><code>CloseConsole</code></h2>
 
 **Example**
 
@@ -88,11 +88,11 @@ AplosConsole.Instance.CloseConsole();
 
 <br>
 
-## `RegisterCommand`
+<h2 id="registercommand"><code>RegisterCommand</code></h2>
 
 **Parameters:**
 
-- `command` — The command to add to the system.
+- `command` ([`AplosDebugCommandBase`](aplos-debug-command.md#aplosdebugcommandbase)) — The command to add to the system.
 
 **Example**
 
@@ -105,14 +105,14 @@ AplosConsole.Instance.RegisterCommand(command);
 
 <br>
 
-## `RegisterCommand`
+<h2 id="registercommand-2"><code>RegisterCommand</code></h2>
 
 **Parameters:**
 
-- `id` — Identifier used to invoke the command.
-- `description` — Description shown in the command list.
-- `format` — Usage/format string for the command.
-- `command` — Action to run when the command is invoked.
+- `id` (`string`) — Identifier used to invoke the command.
+- `description` (`string`) — Description shown in the command list.
+- `format` (`string`) — Usage/format string for the command.
+- `command` (`Action`) — Action to run when the command is invoked.
 
 **Example**
 
@@ -125,11 +125,11 @@ AplosDebugCommand command = AplosConsole.Instance.RegisterCommand(
 
 <br>
 
-## `UnregisterCommand`
+<h2 id="unregistercommand"><code>UnregisterCommand</code></h2>
 
 **Parameters:**
 
-- `id` — The `CommandId` of the command to remove.
+- `id` (`string`) — The `CommandId` of the command to remove.
 
 **Example**
 
@@ -141,7 +141,7 @@ AplosConsole.Instance.UnregisterCommand("hello");
 
 <br>
 
-## `RefreshCommands`
+<h2 id="refreshcommands"><code>RefreshCommands</code></h2>
 
 **Example**
 
@@ -153,7 +153,7 @@ AplosConsole.Instance.RefreshCommands();
 
 <br>
 
-## `AutoCompletePressed`
+<h2 id="autocompletepressed"><code>AutoCompletePressed</code></h2>
 
 **Example**
 
@@ -165,7 +165,7 @@ AplosConsole.Instance.AutoCompletePressed();
 
 <br>
 
-## `SubmitPressed`
+<h2 id="submitpressed"><code>SubmitPressed</code></h2>
 
 **Example**
 
@@ -177,11 +177,11 @@ AplosConsole.Instance.SubmitPressed();
 
 <br>
 
-## `NavigatePressed`
+<h2 id="navigatepressed"><code>NavigatePressed</code></h2>
 
 **Parameters:**
 
-- `direction` — The direction to move, where a positive value navigates up and a negative value navigates down.
+- `direction` (`int`) — The direction to move, where a positive value navigates up and a negative value navigates down.
 
 **Example**
 
@@ -193,7 +193,7 @@ AplosConsole.Instance.NavigatePressed(1);
 
 <br>
 
-## `ToggleDebug`
+<h2 id="toggledebug"><code>ToggleDebug</code></h2>
 
 **Example**
 
