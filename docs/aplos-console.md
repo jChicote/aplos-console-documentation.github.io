@@ -1,8 +1,7 @@
 # AplosConsole
 
 `AplosConsole` is a singleton console that manages command registration and drives the
-console's open, close, and input actions. It is a sealed `MonoBehaviour` singleton (namespace
-`AplosConsole`) that implements `IConsoleCommandSystem` and `IConsoleInputProvider`.
+console's open, close, and input actions.
 
 <details>
 <summary><strong>Inheritance</strong></summary>
