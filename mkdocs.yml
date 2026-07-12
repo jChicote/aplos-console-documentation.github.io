@@ -16,9 +16,12 @@ nav:
       - Overview: console.md
       - AplosConsole: aplos-console.md
       - AplosConsoleCommandConstructor: aplos-console-command-constructor.md
-      - AplosWindowManager: aplos-window-manager.md
-      - AplosWindowSettings: aplos-window-settings.md
       - Interfaces: console-interfaces.md
+  - Window:
+      - AplosWindowManager: aplos-window-manager.md
+      - AplosWindowRequest: aplos-window-request.md
+      - AplosWindowSettings: aplos-window-settings.md
+      - Interfaces: window-interfaces.md
   - Command System:
       - AplosDebugCommand: aplos-debug-command.md
       - Interfaces: command-system-interfaces.md

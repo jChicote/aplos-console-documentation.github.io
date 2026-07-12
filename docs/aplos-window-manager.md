@@ -54,7 +54,7 @@ object
 
 **Parameters:**
 
-- `request` (`AplosWindowRequest`) — Describes the window's content and configuration.
+- `request` ([`AplosWindowRequest`](aplos-window-request.md)) — Describes the window's content and configuration.
 
 **Example**
 
