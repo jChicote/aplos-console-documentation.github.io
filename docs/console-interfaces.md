@@ -1,9 +1,5 @@
 # Interfaces
 
-The console is expressed through one contract in the `AplosConsole.Console` namespace.
-`IConsoleInputProvider` is the surface used to drive the console from an input source,
-implemented by [AplosConsole](aplos-console.md).
-
 ## IConsoleInputProvider
 
 Contract for a type that can be driven by input to control the console.

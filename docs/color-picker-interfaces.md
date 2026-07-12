@@ -1,25 +1,28 @@
 # Interfaces
 
-The color picker is expressed through one contract in the `AplosConsole.Views.ColorPicker`
-namespace. `IColorPicker` is the surface consumers use to open a color picker, implemented by
-[AplosColorPickerView](aplos-color-picker-view.md).
-
 ## IColorPicker
 
 Contract for a color picker that can be opened with an initial color and notified of the result
-via callbacks.
+via callbacks. Implemented by [AplosColorPickerView](aplos-color-picker-view.md).
 
-### Methods
+***Namespace***: `AplosConsole.Views.ColorPicker`
 
-| Name | Description |
-| --- | --- |
-| `Show` | Opens the color picker with the given initial color (R, G, B, A), invoking `onApply` once the color is applied or `onCancel` if the picker is cancelled. |
+### Public methods
 
-<details>
-<summary>Declarations</summary>
+<h2 id="show"><code>Show</code></h2>
+
+**Parameters:**
+
+- `initial` (`Color`) — Initial color (R, G, B, A).
+- `onApply` (`UnityAction<Color>`) — Action to call once the color is applied.
+- `onCancel` (`UnityAction`) — Action to call if the color picker is cancelled. Defaults to `null`.
+
+**Example**
 
 ```csharp
-void Show(Color initial, UnityAction<Color> onApply, UnityAction onCancel = null);
+colorPicker.Show(Color.white, color => { /* apply the chosen color */ });
 ```
 
-</details>
+**Description:** Opens the color picker with the given initial color, invoking `onApply` once the color is applied or `onCancel` if the picker is cancelled.
+
+<br>
