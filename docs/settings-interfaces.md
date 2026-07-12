@@ -1,107 +1,128 @@
 # Interfaces
 
-The settings system is expressed through four contracts in the `AplosConsole.Settings` namespace
-(with `ISettingsStore` in the nested `AplosConsole.Settings.Persistence` namespace).
-`IResettable` and `ISettingsApplicable` are implemented by individual settings-bearing
-components to be collected and driven by the [AplosSettingsManager](aplos-settings-manager.md).
-`ISettingsService` is the surface consumers use to apply persisted settings to spawned objects,
-and `ISettingsStore` abstracts the underlying persistence mechanism from the manager that
-serializes and applies it.
-
 ## IResettable
 
 Contract representing components that implement resettable field options to be collected and
 managed by the [AplosSettingsManager](aplos-settings-manager.md).
 
-### Methods
+***Namespace***: `AplosConsole.Settings`
 
-| Name | Description |
-| --- | --- |
-| `ResetToDefaults` | Discards persisted state and restores authored defaults, on disk and live. |
+### Public methods
 
-<details>
-<summary>Declarations</summary>
+<h2 id="resettodefaults"><code>ResetToDefaults</code></h2>
+
+**Example**
 
 ```csharp
-void ResetToDefaults();
+public class MyResettableComponent : MonoBehaviour, IResettable
+{
+    public void ResetToDefaults()
+    {
+        // restore authored defaults
+    }
+}
 ```
 
-</details>
+**Description:** Discards persisted state and restores authored defaults, on disk and live.
+
+<br>
 
 ## ISettingsApplicable
 
 Generalised apply-hook contract for pushing loaded field values into live runtime state.
 
-### Methods
+***Namespace***: `AplosConsole.Settings`
 
-| Name | Description |
-| --- | --- |
-| `ApplySettings` | Pushes loaded field values into live runtime state. Excludes the color state of the given UI element. |
+### Public methods
 
-<details>
-<summary>Declarations</summary>
+<h2 id="applysettings"><code>ApplySettings</code></h2>
+
+**Example**
 
 ```csharp
-void ApplySettings();
+public void ApplySettings()
+{
+    // push loaded field values into live runtime state
+}
 ```
 
-</details>
+**Description:** Pushes the currently-loaded field values into live runtime state. Colour state is handled separately via `IColorSettingsApplicable`.
+
+<br>
 
 ## ISettingsService
 
 Lets components react to settings being (re)loaded and apply the saved palette to a spawned
-object.
+object. Implemented by [AplosSettingsManager](aplos-settings-manager.md).
+
+***Namespace***: `AplosConsole.Settings`
 
 ### Properties
 
-| Name | Description |
-| --- | --- |
-| `HasLoadedSettings` | True once a saved configuration has been loaded and pushed to visuals. |
-| `SettingsLoaded` | `UnityEvent` raised after each load so consumers can (re)apply without ordering assumptions. |
+| Name | Data Type | Description |
+| --- | --- | --- |
+| `HasLoadedSettings` | `bool` | True once a saved configuration has been loaded and pushed to visuals. Read-only. |
+| `SettingsLoaded` | `UnityEvent` | Raised after each load so consumers can (re)apply without ordering assumptions. Read-only. |
 
-<details>
-<summary>Declarations</summary>
+### Public methods
 
-```csharp
-bool HasLoadedSettings { get; }
-UnityEvent SettingsLoaded { get; }
-```
+<h2 id="applysettingsto"><code>ApplySettingsTo</code></h2>
 
-</details>
+**Parameters:**
 
-### Methods
+- `root` (`GameObject`) — The freshly spawned object to apply the saved settings to.
+- `includeChildren` (`bool`) — Whether to include inactive children when applying settings. Defaults to `true`.
 
-| Name | Description |
-| --- | --- |
-| `ApplySettingsTo` | Applies the persisted settings to a freshly spawned object (e.g. a runtime window). |
-
-<details>
-<summary>Declarations</summary>
+**Example**
 
 ```csharp
-void ApplySettingsTo(GameObject root, bool includeChildren = true);
+settingsService.ApplySettingsTo(newWindow.gameObject);
 ```
 
-</details>
+**Description:** Applies the persisted settings to a freshly spawned object (e.g. a runtime window).
+
+<br>
 
 ## ISettingsStore
 
 _Internal contract._ Persists and restores the raw settings-configuration JSON, abstracting the
 backing store (file, prefs, ...) from the settings manager that serializes and applies it.
 
-### Methods
+***Namespace***: `AplosConsole.Settings.Persistence`
 
-| Name | Description |
-| --- | --- |
-| `TryLoad` | Returns the stored JSON when a saved configuration exists and could be read; returns `false` (with the defaults left in place) otherwise. |
-| `Save` | Persists the given JSON to the backing store. |
+### Public methods
 
-<details>
-<summary>Declarations</summary>
+<h2 id="tryload"><code>TryLoad</code></h2>
+
+**Parameters:**
+
+- `json` (`out string`) — The stored JSON, if a saved configuration exists and could be read.
+
+**Example**
 
 ```csharp
-bool TryLoad(out string json);
-void Save(string json);
+if (settingsStore.TryLoad(out string json))
+{
+    // apply json
+}
 ```
 
-</details>
+**Description:** Returns the stored JSON when a saved configuration exists and could be read; returns `false` (with the defaults left in place) otherwise.
+
+<br>
+
+<h2 id="save"><code>Save</code></h2>
+
+**Parameters:**
+
+- `json` (`string`) — The settings JSON to persist.
+
+**Example**
+
+```csharp
+settingsStore.Save(json);
+```
+
+**Description:** Persists the given JSON to the backing store.
+
+<br>
