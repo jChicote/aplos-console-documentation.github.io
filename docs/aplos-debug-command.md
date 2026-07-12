@@ -1,180 +1,257 @@
 # AplosDebugCommand
 
-The Aplos command family models a runnable console command: the metadata that describes it
-(its id, description, and usage format) paired with a delegate to execute. All variants live in
-the `AplosConsole.Commands` namespace and derive from `AplosDebugCommandBase`, which holds the
-shared metadata. The concrete `AplosDebugCommand` types differ only in how many typed arguments
-they forward to their wrapped delegate. Commands are registered with and invoked through
-[AplosConsole](aplos-console.md).
+The Aplos command family models a runnable console command. Commands are registered with and invoked
+through [AplosConsole](aplos-console.md).
 
 ## AplosDebugCommandBase
 
-The metadata base shared by every command variant. It stores the command's identity and usage
+The base shared by every command variant. It stores the command's identity and usage
 text and exposes them read-only; it carries no executable delegate of its own.
+
+<details>
+<summary><strong>Inheritance</strong></summary>
+
+```
+object
+ ↳ AplosDebugCommandBase
+```
+
+</details>
+<br>
+
+**Inherited Members:**
+
+- `object.Equals(object)`
+- `object.Equals(object, object)`
+- `object.GetHashCode()`
+- `object.GetType()`
+- `object.ReferenceEquals(object, object)`
+- `object.ToString()`
+
+***Namespace***: `AplosConsole.Commands`
 
 ### Properties
 
-| Name | Description |
-| --- | --- |
-| `CommandId` | The identifier used to invoke the command from the console. Read-only. |
-| `CommandDescription` | Human-readable description shown in the command list and help output. Read-only. |
-| `CommandFormat` | Usage/format string describing the command's expected arguments. Read-only. |
-
-<details>
-<summary>Declarations</summary>
-
-```csharp
-public string CommandId { get; }
-public string CommandDescription { get; }
-public string CommandFormat { get; }
-```
-
-</details>
+| Name | Data Type | Description |
+| --- | --- | --- |
+| `CommandId` | `string` | The identifier used to invoke the command from the console. Read-only. |
+| `CommandDescription` | `string` | Human-readable description shown in the command list and help output. Read-only. |
+| `CommandFormat` | `string` | Usage/format string describing the command's expected arguments. Read-only. |
 
 ### Constructors
 
-| Name | Description |
-| --- | --- |
-| `AplosDebugCommandBase` | Initialises the shared metadata. Normally called via `base(...)` from a derived `AplosDebugCommand` variant rather than directly. |
+<h2 id="aplosdebugcommandbase-constructor"><code>AplosDebugCommandBase</code></h2>
 
-<details>
-<summary>Declarations</summary>
+**Parameters:**
+
+- `commandId` (`string`) — Identifier used to invoke the command.
+- `commandDescription` (`string`) — Description shown in the command list.
+- `commandFormat` (`string`) — Usage/format string for the command.
+
+**Example**
 
 ```csharp
-public AplosDebugCommandBase(string commandId, string commandDescription, string commandFormat);
+public class MyCommand : AplosDebugCommandBase
+{
+    public MyCommand(string id, string description, string format)
+        : base(id, description, format) { }
+}
 ```
 
-</details>
+**Description:** Initialises the shared metadata. Normally called via `base(...)` from a derived `AplosDebugCommand` variant rather than directly.
+
+<br>
 
 ## AplosDebugCommand
 
 A parameterless command. Wraps an `Action` that runs when the command is invoked with no
 arguments.
 
-### Properties
-
-| Name | Description |
-| --- | --- |
-| `IsBuiltIn` | Marks the command as one that ships with the console (as opposed to a user-registered command). Defaults to `false`. Get/set. |
-| _Inherited_ | `CommandId`, `CommandDescription`, and `CommandFormat` from `AplosDebugCommandBase`. |
-
 <details>
-<summary>Declarations</summary>
+<summary><strong>Inheritance</strong></summary>
 
-```csharp
-public bool IsBuiltIn { get; set; }
+```
+object
+ ↳ AplosDebugCommandBase
+    ↳ AplosDebugCommand
 ```
 
 </details>
+<br>
+
+**Inherited Members:**
+
+- `AplosDebugCommandBase.CommandId`
+- `AplosDebugCommandBase.CommandDescription`
+- `AplosDebugCommandBase.CommandFormat`
+
+***Namespace***: `AplosConsole.Commands`
+
+### Properties
+
+| Name | Data Type | Description |
+| --- | --- | --- |
+| `IsBuiltIn` | `bool` | Marks the command as one that ships with the console (as opposed to a user-registered command). Defaults to `false`. Get/set. |
 
 ### Constructors
 
-| Name | Description |
-| --- | --- |
-| `AplosDebugCommand` | Builds a parameterless command from the given metadata and action. Pass `isBuiltIn: true` to flag it as a built-in command. |
+<h2 id="aplosdebugcommand-constructor"><code>AplosDebugCommand</code></h2>
 
-<details>
-<summary>Declarations</summary>
+**Parameters:**
+
+- `commandId` (`string`) — Identifier used to invoke the command.
+- `commandDescription` (`string`) — Description shown in the command list.
+- `commandFormat` (`string`) — Usage/format string for the command.
+- `command` (`Action`) — Action to run when the command is invoked.
+- `isBuiltIn` (`bool`) — Whether to flag the command as a built-in command. Defaults to `false`.
+
+**Example**
 
 ```csharp
-public AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action command, bool isBuiltIn = false);
+var command = new AplosDebugCommand("hello", "Prints a greeting", "hello", () => Debug.Log("Hi!"));
 ```
 
-</details>
+**Description:** Builds a parameterless command from the given metadata and action. Pass `isBuiltIn: true` to flag it as a built-in command.
+
+<br>
 
 ### Public methods
 
-| Name | Description |
-| --- | --- |
-| `Invoke` | Executes the wrapped action. No-op if the action is `null`. |
+<h2 id="invoke"><code>Invoke</code></h2>
 
-<details>
-<summary>Declarations</summary>
+**Example**
 
 ```csharp
-public void Invoke();
+command.Invoke();
 ```
 
-</details>
+**Description:** Executes the wrapped action. No-op if the action is `null`.
+
+<br>
 
 ## AplosDebugCommand&lt;T&gt;
 
 A single-argument command. Wraps an `Action<T>` invoked with one typed argument parsed from the
 console input.
 
-### Properties
+<details>
+<summary><strong>Inheritance</strong></summary>
 
-| Name | Description |
-| --- | --- |
-| _Inherited_ | `CommandId`, `CommandDescription`, and `CommandFormat` from `AplosDebugCommandBase`. Adds no properties of its own. |
+```
+object
+ ↳ AplosDebugCommandBase
+    ↳ AplosDebugCommand<T>
+```
+
+</details>
+<br>
+
+**Inherited Members:**
+
+- `AplosDebugCommandBase.CommandId`
+- `AplosDebugCommandBase.CommandDescription`
+- `AplosDebugCommandBase.CommandFormat`
+
+***Namespace***: `AplosConsole.Commands`
 
 ### Constructors
 
-| Name | Description |
-| --- | --- |
-| `AplosDebugCommand` | Builds a command from the given metadata that forwards a single typed argument to `command`. |
+<h2 id="aplosdebugcommand-constructor-2"><code>AplosDebugCommand</code></h2>
 
-<details>
-<summary>Declarations</summary>
+**Parameters:**
+
+- `commandId` (`string`) — Identifier used to invoke the command.
+- `commandDescription` (`string`) — Description shown in the command list.
+- `commandFormat` (`string`) — Usage/format string for the command.
+- `command` (`Action<T>`) — Action to run when the command is invoked, receiving the parsed argument.
+
+**Example**
 
 ```csharp
-public AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action<T> command);
+var command = new AplosDebugCommand<int>("setlevel", "Sets the level", "setlevel <int>", level => Debug.Log(level));
 ```
 
-</details>
+**Description:** Builds a command from the given metadata that forwards a single typed argument to `command`.
+
+<br>
 
 ### Public methods
 
-| Name | Description |
-| --- | --- |
-| `Invoke` | Executes the wrapped action with the supplied argument. No-op if the action is `null`. |
+<h2 id="invoke-2"><code>Invoke</code></h2>
 
-<details>
-<summary>Declarations</summary>
+**Parameters:**
+
+- `value` (`T`) — The argument to forward to the wrapped action.
+
+**Example**
 
 ```csharp
-public void Invoke(T value);
+command.Invoke(5);
 ```
 
-</details>
+**Description:** Executes the wrapped action with the supplied argument. No-op if the action is `null`.
+
+<br>
 
 ## AplosDebugCommand&lt;T1, T2&gt;
 
 A two-argument command. Wraps an `Action<T1, T2>` invoked with two typed arguments parsed from
 the console input.
 
-### Properties
+<details>
+<summary><strong>Inheritance</strong></summary>
 
-| Name | Description |
-| --- | --- |
-| _Inherited_ | `CommandId`, `CommandDescription`, and `CommandFormat` from `AplosDebugCommandBase`. Adds no properties of its own. |
+```
+object
+ ↳ AplosDebugCommandBase
+    ↳ AplosDebugCommand<T1, T2>
+```
+
+</details>
+<br>
+
+**Inherited Members:**
+
+- `AplosDebugCommandBase.CommandId`
+- `AplosDebugCommandBase.CommandDescription`
+- `AplosDebugCommandBase.CommandFormat`
+
+***Namespace***: `AplosConsole.Commands`
 
 ### Constructors
 
-| Name | Description |
-| --- | --- |
-| `AplosDebugCommand` | Builds a command from the given metadata that forwards two typed arguments to `command`. |
+<h2 id="aplosdebugcommand-constructor-3"><code>AplosDebugCommand</code></h2>
 
-<details>
-<summary>Declarations</summary>
+**Parameters:**
+
+- `commandId` (`string`) — Identifier used to invoke the command.
+- `commandDescription` (`string`) — Description shown in the command list.
+- `commandFormat` (`string`) — Usage/format string for the command.
+- `command` (`Action<T1, T2>`) — Action to run when the command is invoked, receiving the two parsed arguments.
+
+**Example**
 
 ```csharp
-public AplosDebugCommand(string commandId, string commandDescription, string commandFormat, Action<T1, T2> command);
+var command = new AplosDebugCommand<int, string>("setitem", "Sets an item", "setitem <int> <string>", (id, name) => Debug.Log($"{id}: {name}"));
 ```
 
-</details>
+**Description:** Builds a command from the given metadata that forwards two typed arguments to `command`.
+
+<br>
 
 ### Public methods
 
-| Name | Description |
-| --- | --- |
-| `Invoke` | Executes the wrapped action with the two supplied arguments. No-op if the action is `null`. |
+<h2 id="invoke-3"><code>Invoke</code></h2>
 
-<details>
-<summary>Declarations</summary>
+**Parameters:**
+
+- `value` (`T1`) — The first argument to forward to the wrapped action.
+- `value2` (`T2`) — The second argument to forward to the wrapped action.
+
+**Example**
 
 ```csharp
-public void Invoke(T1 value, T2 value2);
+command.Invoke(5, "sword");
 ```
 
-</details>
+**Description:** Executes the wrapped action with the two supplied arguments. No-op if the action is `null`.
