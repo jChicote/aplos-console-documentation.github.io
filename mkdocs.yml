@@ -36,4 +36,5 @@ nav:
       - DebugGroupAttribute: debug-group-attribute.md
   - Input:
       - AplosInputManager: aplos-input-manager.md
+      - AplosConsoleInputAdapterBase: aplos-console-input-adapter-base.md
       - Interfaces: input-interfaces.md
