@@ -46,7 +46,7 @@ object
 | `IsOpen` | `bool` | Whether the console is currently open (active). |
 | `CommandConfiguration` | `AplosCommandConfiguration` | Required dependency. Serialized reference to the `AplosCommandConfiguration` asset that supplies the default command set. |
 | `AplosWindow` | `GameObject` | Required dependency. Serialized reference to the console window `GameObject`; its active state determines the initial open/closed state. |
-| `AddOnCommands` | `List<AplosConsoleCommandConstructor>` | List of additional `AplosConsoleCommandConstructor`s registered during initialisation. |
+| `AddOnCommands` | `List<AplosConsoleCommandConstructor>` | List of additional [`AplosConsoleCommandConstructor`](aplos-console-command-constructor.md)s registered during initialisation. |
 
 ## Events
 

@@ -15,6 +15,7 @@ nav:
   - Console:
       - Overview: console.md
       - AplosConsole: aplos-console.md
+      - AplosConsoleCommandConstructor: aplos-console-command-constructor.md
       - AplosWindowManager: aplos-window-manager.md
       - AplosWindowSettings: aplos-window-settings.md
       - Interfaces: console-interfaces.md
@@ -27,6 +28,9 @@ nav:
   - Settings:
       - AplosSettingsManager: aplos-settings-manager.md
       - Interfaces: settings-interfaces.md
+  - Attributes:
+      - DebugSettingAttribute: debug-setting-attribute.md
+      - DebugGroupAttribute: debug-group-attribute.md
   - Input:
       - AplosInputManager: aplos-input-manager.md
       - Interfaces: input-interfaces.md
