@@ -40,4 +40,5 @@ nav:
   - Input:
       - AplosInputManager: aplos-input-manager.md
       - AplosConsoleInputAdapterBase: aplos-console-input-adapter-base.md
+      - DebugInputActionMapper: debug-input-action-mapper.md
       - Interfaces: input-interfaces.md
