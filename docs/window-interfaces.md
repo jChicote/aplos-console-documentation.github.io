@@ -74,3 +74,65 @@ resizeHandler.RestoreWindowSize();
 **Description:** Restores the window to the size it was at before it was last collapsed.
 
 <br>
+
+## IWindowStateStore
+
+_Internal contract._ Persists and restores a single window's `WindowState` by key, abstracting
+the backing store (file, prefs, ...) from the components that capture and apply window layout.
+
+***Namespace***: `AplosConsole.Windows.Persistence`
+
+### Public methods
+
+<h2 id="tryload"><code>TryLoad</code></h2>
+
+**Parameters:**
+
+- `key` (`string`) — Identifier the state was previously saved under.
+- `state` (`out WindowState`) — The stored state, if a valid save exists for the key.
+
+**Example**
+
+```csharp
+if (windowStateStore.TryLoad("myWindow", out WindowState state))
+{
+    // apply state
+}
+```
+
+**Description:** Returns `true` and outputs the stored state when a valid save exists for the key; otherwise returns `false` and leaves callers on their defaults.
+
+<br>
+
+<h2 id="save"><code>Save</code></h2>
+
+**Parameters:**
+
+- `key` (`string`) — Identifier to save the state under.
+- `state` (`WindowState`) — The window state to persist.
+
+**Example**
+
+```csharp
+windowStateStore.Save("myWindow", state);
+```
+
+**Description:** Persists the given state under the specified key.
+
+<br>
+
+<h2 id="clear"><code>Clear</code></h2>
+
+**Parameters:**
+
+- `key` (`string`) — Identifier of the saved state to discard.
+
+**Example**
+
+```csharp
+windowStateStore.Clear("myWindow");
+```
+
+**Description:** Discards any saved state for the key so the next load falls back to the window's authored defaults (used by the console reset).
+
+<br>
