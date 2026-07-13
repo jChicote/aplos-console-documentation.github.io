@@ -32,6 +32,7 @@ nav:
       - Interfaces: color-picker-interfaces.md
   - Settings:
       - AplosSettingsManager: aplos-settings-manager.md
+      - DebugSettingsScanner: debug-settings-scanner.md
       - Interfaces: settings-interfaces.md
   - Attributes:
       - DebugSettingAttribute: debug-setting-attribute.md
