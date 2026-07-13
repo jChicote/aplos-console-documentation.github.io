@@ -23,9 +23,11 @@ nav:
       - AplosWindowSettings: aplos-window-settings.md
       - Interfaces: window-interfaces.md
   - Command System:
+      - AplosCommandConfiguration: aplos-command-configuration.md
       - AplosDebugCommand: aplos-debug-command.md
       - Interfaces: command-system-interfaces.md
   - Color Picker:
+      - AplosColorPalette: aplos-color-palette.md
       - AplosColorPickerView: aplos-color-picker-view.md
       - Interfaces: color-picker-interfaces.md
   - Settings:
