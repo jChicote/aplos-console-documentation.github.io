@@ -2,25 +2,61 @@
 
 ## IConsoleInputProvider
 
-Contract for a type that can be driven by input to control the console.
+Contract for forwarding console input actions from an input source to the console. Implemented by
+[AplosConsole](aplos-console.md).
 
-### Methods
+***Namespace***: `AplosConsole.Console`
 
-| Name | Description |
-| --- | --- |
-| `AutoCompletePressed` | Input hook that requests auto-complete. |
-| `SubmitPressed` | Input hook that submits the current input. |
-| `NavigatePressed` | Input hook that requests navigation in the given direction. |
-| `ToggleDebug` | Input hook that toggles the console between its open and closed states. |
+### Public methods
 
-<details>
-<summary>Declarations</summary>
+<h2 id="autocompletepressed"><code>AutoCompletePressed</code></h2>
+
+**Example**
 
 ```csharp
-void AutoCompletePressed();
-void SubmitPressed();
-void NavigatePressed(int direction);
-void ToggleDebug();
+inputProvider.AutoCompletePressed();
 ```
 
-</details>
+**Description:** Signals that the auto-complete action was triggered for the current input.
+
+<br>
+
+<h2 id="submitpressed"><code>SubmitPressed</code></h2>
+
+**Example**
+
+```csharp
+inputProvider.SubmitPressed();
+```
+
+**Description:** Signals that the submit action was triggered.
+
+<br>
+
+<h2 id="navigatepressed"><code>NavigatePressed</code></h2>
+
+**Parameters:**
+
+- `direction` (`int`) — The direction to move, where a positive value navigates up and a negative value navigates down.
+
+**Example**
+
+```csharp
+inputProvider.NavigatePressed(1);
+```
+
+**Description:** Signals a navigation action through the console's command list.
+
+<br>
+
+<h2 id="toggledebug"><code>ToggleDebug</code></h2>
+
+**Example**
+
+```csharp
+inputProvider.ToggleDebug();
+```
+
+**Description:** Signals a request to toggle the console's visibility open or closed.
+
+<br>
