@@ -3,8 +3,7 @@
 `AplosWindowManager` opens, tracks, and tears down the runtime windows spawned by the console.
 It creates windows through an `AplosWindowFactory`, keeps a list of the ones currently open,
 applies the saved settings palette and configuration to each freshly spawned window, and can
-close them all at once. It is a `MonoBehaviour` singleton (namespace `AplosConsole.Windows`)
-that implements no interfaces of its own.
+close them all at once.
 
 <details>
 <summary><strong>Inheritance</strong></summary>

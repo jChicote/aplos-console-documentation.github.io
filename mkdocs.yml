@@ -13,7 +13,6 @@ nav:
   - Changelog: changelog.md
   - About: about.md
   - Console:
-      - Overview: console.md
       - AplosConsole: aplos-console.md
       - AplosConsoleCommandConstructor: aplos-console-command-constructor.md
       - Interfaces: console-interfaces.md
@@ -42,3 +41,6 @@ nav:
       - AplosConsoleInputAdapterBase: aplos-console-input-adapter-base.md
       - DebugInputActionMapper: debug-input-action-mapper.md
       - Interfaces: input-interfaces.md
+  - Overview Log:
+      - OverviewLoggerView: overview-logger-view.md
+      - Interfaces: overview-log-interfaces.md
