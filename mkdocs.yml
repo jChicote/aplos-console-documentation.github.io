@@ -8,10 +8,14 @@ extra_css:
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - Manual: manual.md
-  - Changelog: changelog.md
   - About: about.md
+  - Changelog: changelog.md
+  - Guides:
+      - Getting Started: getting-started.md
+      - Adding Commands: adding-commands.md
+      - Setting up Input: setting-up-input.md
+      - Using the Console: using-the-console.md
+      - Using the Settings: using-the-settings.md
   - Console:
       - AplosConsole: aplos-console.md
       - AplosConsoleCommandConstructor: aplos-console-command-constructor.md
