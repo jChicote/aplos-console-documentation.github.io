@@ -1,31 +1,70 @@
 # Adding Commands
 
-_A guide to creating console commands and getting them into Aplos Console._
+A guide to creating console commands and getting them into Aplos Console.
 
 ## How it works
 
 _An overview of the command system and how commands are registered and invoked._
 
-1. Authoring Commands - Developed commands live as objects and can be used interchangeably.
-2. Registration - Command objects are then registered against the console so that they show up as entries within the console command list.
-3. Execution - When selected, the underlying configured action is invoked against the selected command.
+1. **Authoring** — commands live as objects and can be used interchangeably.
+2. **Registration** — command objects are registered against the console so that they show up as entries within the console command list.
+3. **Execution** — when selected, the underlying configured action is invoked against the selected command.
 
 ## Developing commands
 
-1. Creating the command object
+_How to author a command object and attach it in Unity._
 
-**Example**
+1. Create the command object.
+    1. Create a new class component inheriting from `AplosConsoleCommandConstructor`.
+    2. Add the methods that contain the behaviour required for each command, and register them as part of the `RegisterCommand` override.
 
-```csharp
-AplosConsole.Instance.UnregisterCommand("hello");
-```
+    **Example**
 
-2.Adding command objects to oonsole
+    ```csharp
+    public class UnityLogCommand : AplosConsoleCommandConstructor
+    {
+
+        public override void RegisterCommand(IConsoleCommandSystem commandSystem)
+        {
+            AplosDebugCommand printLog = new AplosDebugCommand(
+                "printLog",
+                "Command for printing some random text to Unity's Console.",
+                "printLog",
+                this.LogToUnityConsoleCommand);
+
+            commandSystem.RegisterCommand(printLog);
+        }
+
+        private void LogToUnityConsoleCommand()
+        {
+            // Arrange
+
+            // Act
+            Debug.Log("Log this to Unity Console.");
+        }
+
+    }
+    ```
+
+2. In Unity, create a new GameObject and attach the recently created component.
 
 ## Adding commands during runtime
 
-_How to register commands dynamically while the game is running._
+_How to register a command while the console is already running._
+
+1. Open the `AplosConsole` component from the inspector.
+2. Add a new entry to `AddOnCommands` and pass in a command GameObject.
+3. Press the **Refresh Command List** button.
+4. Show all commands from the Console view.
 
 ## Configuring pre-loaded commands
 
-_How to set up commands that are available from startup._
+_How to bundle commands into a configuration so they load with the console._
+
+1. Create the command GameObject.
+2. Create a prefab of the command GameObject.
+3. Locate your instance of the `AplosCommandConfiguration` ScriptableObject. If one does not exist, create a new command configuration by right-clicking in the Project area and navigating to **Create → AplosConsole → Aplos Command Configuration**.
+    1. If a new command configuration is created, set this ScriptableObject on the `AplosConsole` component's `CommandConfiguration` field and the `AplosInputManager` component's `Settings` field.
+4. Play the scene.
+5. Open the console by pressing `` ` `` key.
+6. Show all commands (command: `help`).
