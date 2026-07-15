@@ -8,15 +8,20 @@ The console is made up of three main areas — the command view, the input row w
 
 ![Console View with annotations.](assets/using-console-parts.png)
 
-### Window buttons
+### 1. Window buttons
+
+- **Settings Button** opens the settings view.
+- **Collapse Button** both shrinks and expands the window. When shrunk only the input and action buttons are visible.
+- **Close Button** just closes the screen
 
 ![Collapsed Console View.](assets/using-console-collapsed.png)
+Above: The console window when shrunk.
 
-### Console view
+### 2. Console view
 
 The console view is the scrollable list that fills the console window. Each row is a command, showing its identifier as a header with a short description beneath it.
 
-By default the list shows only the built-in commands (such as `help` and `reset`) together with any commands you have pinned, so it opens in a tidy resting state rather than dumping every command at once. Typing in the input field filters the list to matching commands, and running `help` expands it to show everything.
+By default the list shows only the built-in commands (such as `help` and `reset`) together with any commands you have pinned. TO show all commands the 'help' command will reveal everything.
 
 Rows respond to interaction:
 
@@ -24,21 +29,7 @@ Rows respond to interaction:
 - **Double click** submits that command immediately.
 - **Keyboard navigation** (arrow keys) steps through the visible matches, previewing the highlighted command as an inline suggestion.
 
-A scrollbar down the side lets you move through longer lists, and its handle is tinted to match the active colour settings.
-
-### Input field and toggle buttons
-
-The input field is the text box where you type a command. As you type, the console filters the list and offers an inline auto-complete suggestion — the remainder of the best-matching command is shown in colour after your caret. Accepting the suggestion or selecting a row fills in the full command, and pressing submit runs it.
-
-Sitting alongside the input field are two action buttons that toggle their enabled state based on what you have typed:
-
-- **Submit** runs the selected command (or, if nothing is explicitly selected, the top match in the list). It only becomes active when there is a command available to run.
-- **Clear** empties the input field. It becomes active whenever there is text to clear or a command ready to run.
-
-When neither condition is met, both buttons are shown as disabled so it is always obvious whether the console has something actionable.
-
-### Pin buttons
-
+### 2. Pinned Buttons
 Every command row carries its own pin button. Clicking it toggles whether that command is pinned, and the button changes colour to reflect its pinned state.
 
 Pinning does two things:
@@ -47,3 +38,22 @@ Pinning does two things:
 - **Raises its priority.** Pinned commands are sorted to the top of the list, ahead of the unpinned ones.
 
 Pins are saved to disk per console and restored the next time it opens, so your selection persists across sessions. Running a reset clears all pins and returns the list to its default ordering.
+
+### 3. Input field
+
+The input field is the text box where you type a command. As you type, the console filters the list and offers an inline auto-complete suggestion — the remainder of the best-matching command is shown in colour after your caret. Accepting the suggestion or selecting a row fills in the full command, and pressing submit runs it.
+
+
+## 4. Toggle Buttons
+
+Sitting alongside the input field are two action buttons that toggle their enabled state based on what you have typed:
+
+- **Submit** runs the selected command (or, if nothing is explicitly selected, the top match in the list). It only becomes active when there is a command available to run.
+- **Clear** empties the input field. It becomes active whenever there is text to clear or a command ready to run.
+
+When neither condition is met, both buttons are shown as disabled so it is always obvious whether the console has something actionable.
+
+## 5. Resizing bars
+
+Along the edge of the window are various resizing bars that can readjust the window size both vertically and horizontally.
+The minimum and maximum size allowed by the window can be adjusted through the settings.
