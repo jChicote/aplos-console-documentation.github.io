@@ -41,9 +41,6 @@ object
 
 ## Behaviour
 
-On `Start` the handler subscribes to [`AplosConsole`](aplos-console.md)'s `OnOpenConsole` and
-`OnCloseConsole` events, and unsubscribes from them on `OnDestroy`.
-
 When the console opens, it caches the current `Cursor.lockState` and `Cursor.visible`, then sets
 `Cursor.lockState` to `CursorLockMode.None` and `Cursor.visible` to `true` so the cursor is free
 to interact with the console. When the console closes, it writes the cached lock state and
