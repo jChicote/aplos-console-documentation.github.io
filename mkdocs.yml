@@ -41,8 +41,9 @@ nav:
       - DebugSettingAttribute: debug-setting-attribute.md
       - DebugGroupAttribute: debug-group-attribute.md
   - Input:
-      - AplosInputManager: aplos-input-manager.md
       - AplosConsoleInputAdapterBase: aplos-console-input-adapter-base.md
+      - AplosInputManager: aplos-input-manager.md
+      - ConsoleCursorHandler: console-cursor-handler.md
       - DebugInputActionMapper: debug-input-action-mapper.md
       - Interfaces: input-interfaces.md
   - Overview Log:
