@@ -15,8 +15,8 @@ _An overview of the command system and how commands are registered and invoked._
 _How to author a command object and attach it in Unity._
 
 1. Create the command object.
-    1. Create a new class component inheriting from `AplosConsoleCommandConstructor`.
-    2. Add the methods that contain the behaviour required for each command, and register them as part of the `RegisterCommand` override.
+    1. Create a new class component inheriting from [`AplosConsoleCommandConstructor`](aplos-console-command-constructor.md).
+    2. Add the methods that contain the behaviour required for each command, and register them as part of the [`RegisterCommand`](aplos-console-command-constructor.md#registercommand) override.
 
     **Example**
 
@@ -52,8 +52,8 @@ _How to author a command object and attach it in Unity._
 
 _How to register a command while the console is already running._
 
-1. Open the `AplosConsole` component from the inspector.
-2. Add a new entry to `AddOnCommands` and pass in a command GameObject.
+1. Open the [`AplosConsole`](aplos-console.md) component from the inspector.
+2. Add a new entry to [`AddOnCommands`](aplos-console.md#properties) and pass in a command GameObject.
 3. Press the **Refresh Command List** button.
 4. Show all commands from the Console view.
 
@@ -63,8 +63,8 @@ _How to bundle commands into a configuration so they load with the console._
 
 1. Create the command GameObject.
 2. Create a prefab of the command GameObject.
-3. Locate your instance of the `AplosCommandConfiguration` ScriptableObject. If one does not exist, create a new command configuration by right-clicking in the Project area and navigating to **Create → AplosConsole → Aplos Command Configuration**.
-    1. If a new command configuration is created, set this ScriptableObject on the `AplosConsole` component's `CommandConfiguration` field and the `AplosInputManager` component's `Settings` field.
+3. Locate your instance of the [`AplosCommandConfiguration`](aplos-command-configuration.md) ScriptableObject. If one does not exist, create a new command configuration by right-clicking in the Project area and navigating to **Create → AplosConsole → Aplos Command Configuration**.
+    1. If a new command configuration is created, set this ScriptableObject on the [`AplosConsole`](aplos-console.md) component's `CommandConfiguration` field and the [`AplosInputManager`](aplos-input-manager.md) component's `Settings` field.
 4. Play the scene.
 5. Open the console by pressing `` ` `` key.
 6. Show all commands (command: `help`).
