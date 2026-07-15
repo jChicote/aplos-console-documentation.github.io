@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 660" role="img"
+     aria-label="Diagram of how the Aplos Console input components interact: the input adapter starts the input manager, which binds a device mapper to Unity's PlayerInput; the mapper forwards actions to the console; and the console's open/close events route input maps back through the adapter.">
+
+  <style>
+    .box   { fill:#f5f7f9; stroke:#aeb9c4; stroke-width:1.5; }
+    .title { font-family:Segoe UI, Arial, sans-serif; font-size:14px; font-weight:600; fill:#1f2a37; }
+    .sub   { font-family:Segoe UI, Arial, sans-serif; font-size:11px; fill:#5b6b7b; }
+    .lbl   { font-family:Segoe UI, Arial, sans-serif; font-size:11px; paint-order:stroke;
+             stroke:#ffffff; stroke-width:3px; stroke-linejoin:round; }
+    .head  { font-family:Segoe UI, Arial, sans-serif; font-size:13px; font-weight:600; fill:#34434f; }
+    .g { fill:#2e7d32; } .b { fill:#1565c0; } .o { fill:#c14a00; }
+    .eg { stroke:#2e7d32; } .eb { stroke:#1565c0; } .eo { stroke:#c14a00; }
+    .edge { fill:none; stroke-width:2; }
+    .setup { stroke-dasharray:6 4; }
+  </style>
+
+  <defs>
+    <marker id="ag" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2e7d32"/>
+    </marker>
+    <marker id="ab" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1565c0"/>
+    </marker>
+    <marker id="ao" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#c14a00"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="28" class="head">How the input components interact</text>
+
+  <!-- ============ EDGES ============ -->
+
+  <!-- (1) SETUP / BINDING  (green, dashed) -->
+  <path class="edge eg setup" marker-end="url(#ag)" d="M395,118 C300,168 225,205 172,250"/>
+  <text class="lbl g" x="196" y="182">StartPlayerInput()</text>
+
+  <path class="edge eg setup" marker-end="url(#ag)" d="M268,312 L354,312"/>
+  <text class="lbl g" x="312" y="284" text-anchor="middle">find / create</text>
+  <text class="lbl g" x="312" y="298" text-anchor="middle">PlayerInput</text>
+
+  <path class="edge eg setup" marker-end="url(#ag)" d="M110,340 C110,470 150,556 324,556"/>
+  <text class="lbl g" x="120" y="430">inject PlayerInput</text>
+  <text class="lbl g" x="120" y="446">+ BindInput() by SchemaName</text>
+
+  <path class="edge eg setup" marker-end="url(#ag)" d="M452,498 L452,360"/>
+  <text class="lbl g" transform="translate(446,432) rotate(-90)" text-anchor="middle">subscribe to InputActions</text>
+
+  <!-- (2) RUNTIME INPUT  (blue, solid) -->
+  <path class="edge eb" marker-end="url(#ab)" d="M524,354 L524,492"/>
+  <text class="lbl b" transform="translate(532,430) rotate(-90)" text-anchor="middle">action.performed</text>
+
+  <path class="edge eb" marker-end="url(#ab)" d="M646,534 C726,522 782,462 792,360"/>
+  <text class="lbl b" x="648" y="474">SubmitPressed · NavigatePressed</text>
+  <text class="lbl b" x="648" y="490">AutoCompletePressed · ToggleDebug</text>
+
+  <!-- (3) CONSOLE STATE -> INPUT  (orange, solid) -->
+  <path class="edge eo" marker-end="url(#ao)" d="M800,250 C800,150 712,86 616,84"/>
+  <text class="lbl o" x="726" y="150">OnOpenConsole /</text>
+  <text class="lbl o" x="726" y="166">OnCloseConsole</text>
+
+  <path class="edge eo" marker-end="url(#ao)" d="M505,118 C495,168 489,208 487,244"/>
+  <text class="lbl o" x="516" y="176">SwitchCurrentActionMap</text>
+  <text class="lbl o" x="516" y="192">("UI" &#8596; previous map)</text>
+
+  <!-- ============ NODES ============ -->
+
+  <!-- Adapter -->
+  <rect class="box" x="330" y="46" width="280" height="72" rx="10"/>
+  <text class="title" x="470" y="82"  text-anchor="middle">UnityInputSystemAdapter</text>
+  <text class="sub"   x="470" y="102" text-anchor="middle">IAplosConsoleInputAdapter</text>
+
+  <!-- Input Manager -->
+  <rect class="box" x="36" y="252" width="232" height="88" rx="10"/>
+  <text class="title" x="152" y="290" text-anchor="middle">AplosInputManager</text>
+  <text class="sub"   x="152" y="310" text-anchor="middle">orchestrates binding</text>
+
+  <!-- PlayerInput -->
+  <rect class="box" x="360" y="250" width="252" height="104" rx="10"/>
+  <text class="title" x="486" y="286" text-anchor="middle">PlayerInput</text>
+  <text class="sub"   x="486" y="308" text-anchor="middle">Unity Input System</text>
+  <text class="sub"   x="486" y="326" text-anchor="middle">action maps &#183; InputActions</text>
+
+  <!-- Mapper -->
+  <rect class="box" x="330" y="498" width="316" height="92" rx="10"/>
+  <text class="title" x="488" y="534" text-anchor="middle">DebugInputActionMapper</text>
+  <text class="sub"   x="488" y="556" text-anchor="middle">e.g. DebugKeyboardAndMouseInputBinding</text>
+
+  <!-- Console -->
+  <rect class="box" x="690" y="250" width="216" height="104" rx="10"/>
+  <text class="title" x="798" y="296" text-anchor="middle">AplosConsole</text>
+  <text class="sub"   x="798" y="318" text-anchor="middle">IConsoleInputProvider</text>
+
+  <!-- ============ LEGEND ============ -->
+  <g transform="translate(30,616)">
+    <line class="edge eg setup" x1="0" y1="6" x2="30" y2="6" marker-end="url(#ag)"/>
+    <text class="sub" x="38" y="10">1 · Setup &amp; binding</text>
+
+    <line class="edge eb" x1="300" y1="6" x2="330" y2="6" marker-end="url(#ab)"/>
+    <text class="sub" x="338" y="10">2 · Device input &#8594; console</text>
+
+    <line class="edge eo" x1="600" y1="6" x2="630" y2="6" marker-end="url(#ao)"/>
+    <text class="sub" x="638" y="10">3 · Console state &#8594; input routing</text>
+  </g>
+
+</svg>
