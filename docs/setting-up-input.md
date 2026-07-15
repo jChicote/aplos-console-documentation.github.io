@@ -72,7 +72,7 @@ _How to set the input components up in a scene._
    [`AplosConsoleInputAdapterBase`](aplos-console-input-adapter-base.md) and implement a matching
    [`DebugInputActionMapper`](debug-input-action-mapper.md) rather than using the Unity Input System
    defaults.
-7. _(Optional)_ Add a `ConsoleCursorHandler` component to a GameObject in the scene to let the
+7. _(Optional)_ Add a [`ConsoleCursorHandler`](console-cursor-handler.md) component to a GameObject in the scene to let the
    console manage the cursor. It listens for the console's open/close events, freeing and showing
    the cursor while the console is open and restoring the game's previous cursor state on close.
    Omit it to leave the cursor entirely under game control.
