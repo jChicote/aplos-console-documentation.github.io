@@ -67,7 +67,9 @@ _How to set the input components up in a scene._
    ![Example component configurations for the Input GameObject.](assets/setting-up-input-components.png)
 5. In your Input Actions asset, define the actions the console listens for — `Submit`, `Navigate`,
    `AutoComplete`, and `ToggleDebug` — and a `"UI"` action map for the console to switch to while
-   it is open.
+   its open.
+   <br>
+   ![Example input action map used for the operation of the console.](assets/setting-up-input-action-map.png)
 6. _(Optional)_ To integrate a different input system, derive from
    [`AplosConsoleInputAdapterBase`](aplos-console-input-adapter-base.md) and implement a matching
    [`DebugInputActionMapper`](debug-input-action-mapper.md) rather than using the Unity Input System
