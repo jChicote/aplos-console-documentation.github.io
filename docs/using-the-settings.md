@@ -45,17 +45,24 @@ Once marked, the field's value is serialized to disk on save and pushed back int
 - **`ReadOnly`** — the field is still serialized, but flagged as non-editable in tooling.
 - **`Ignore`** — excludes the field from tracking entirely, so it is neither scanned nor persisted.
 
-## Manual Operation
+## Manual operation
 
-Through the inspector, these fields can be collected, saved and loaded during editing or at runtime.
+From the inspector, these fields can be scanned in the editor or at runtime, and saved or loaded while the game is running.
 
-Above: Editor buttons for manual option scanning.
+![Inspector editor settings buttons.](assets/using-the-settings-editor-buttons.png)
+<br>
+_Above: the editor buttons for manual option scanning._
 
-Above: Popup alternative of the above buttons.
+![Context menu popup buttons.](assets/using-the-settings-context-menu-buttons.png)
+<br>
+_Above: the context-menu alternative to the buttons._
 
-For more on what some of these options do, head to [`AplosSettingsManager`](aplos-settings-manager.md)
+For more on what each of these options does, head to [`AplosSettingsManager`](aplos-settings-manager.md).
 
+## Remarks
 
-### Remarks
+Nothing prevents you from declaring `[DebugGroup]` on several components with the same parameters, such as the group name. This is not treated as an error, but it is worth knowing how it resolves.
 
-The implementation does not restrict the user from adding multiple declarations of [DebugGroup] with the same parameters (i.e: name, etc). However the serializer will only persist one of these instances and will
+Settings are keyed by group name alone. Saving writes a block per component under that shared key, while loading matches only the first one it finds. Every component sharing the name therefore reads back that same first block, so they all end up with identical values and the rest are effectively discarded.
+
+This is intentional for cases like runtime windows, where each spawned window shares a group and is meant to look the same. It is a trap only if you expect each instance to keep its own values — the group name is the sole identity the serializer has, so per-instance differences are not preserved.
