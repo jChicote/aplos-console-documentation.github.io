@@ -27,6 +27,7 @@ Rows respond to interaction:
 - **Close** closes the console window.
 
 ![Collapsed console view.](assets/using-console-collapsed.png)
+<br>
 _Above: the console window when collapsed._
 
 ### 2. Pinned buttons
