@@ -1,4 +1,4 @@
-# Using the Settings
+# Using the Settings / Options
 
 How to expose a field so the settings system can track, persist, and restore it at runtime.
 
@@ -44,3 +44,8 @@ Once marked, the field's value is serialized to disk on save and pushed back int
 - **`Min`** / **`Max`** — value hints for `int` and `float` fields. These are hints for tooling only; they are not enforced.
 - **`ReadOnly`** — the field is still serialized, but flagged as non-editable in tooling.
 - **`Ignore`** — excludes the field from tracking entirely, so it is neither scanned nor persisted.
+
+
+### Remarks
+
+The implementation does not restrict the user from adding multiple declarations of [DebugGroup] with the same parameters (i.e: name, etc). However the serializer will only persist one of these instances and will
