@@ -17,36 +17,35 @@ _How to author a command object and attach it in Unity._
 1. Create the command object.
     1. Create a new class component inheriting from [`AplosConsoleCommandConstructor`](aplos-console-command-constructor.md).
     2. Add the methods that contain the behaviour required for each command, and register them as part of the [`RegisterCommand`](aplos-console-command-constructor.md#registercommand) override.
-
-    **Example**
-
-    ```csharp
-    public class UnityLogCommand : AplosConsoleCommandConstructor
-    {
-
-        public override void RegisterCommand(IConsoleCommandSystem commandSystem)
-        {
-            AplosDebugCommand printLog = new AplosDebugCommand(
-                "printLog",
-                "Command for printing some random text to Unity's Console.",
-                "printLog",
-                this.LogToUnityConsoleCommand);
-
-            commandSystem.RegisterCommand(printLog);
-        }
-
-        private void LogToUnityConsoleCommand()
-        {
-            // Arrange
-
-            // Act
-            Debug.Log("Log this to Unity Console.");
-        }
-
-    }
-    ```
-
 2. In Unity, create a new GameObject and attach the recently created component.
+
+**Example**
+
+```csharp
+public class UnityLogCommand : AplosConsoleCommandConstructor
+{
+
+    public override void RegisterCommand(IConsoleCommandSystem commandSystem)
+    {
+        AplosDebugCommand printLog = new AplosDebugCommand(
+            "printLog",
+            "Command for printing some random text to Unity's Console.",
+            "printLog",
+            this.LogToUnityConsoleCommand);
+
+        commandSystem.RegisterCommand(printLog);
+    }
+
+    private void LogToUnityConsoleCommand()
+    {
+        // Arrange
+
+        // Act
+        Debug.Log("Log this to Unity Console.");
+    }
+
+}
+```
 
 ## Adding commands during runtime
 
