@@ -10,11 +10,19 @@ Welcome to the official documentation for **Aplos Console** — an in-game devel
     - [Installation](getting-started.md#installation)
     - [Adding the console to your scene](getting-started.md#adding-the-console-to-your-scene)
     - [Your first command](getting-started.md#your-first-command)
-- **[Manual](manual.md)** — in-depth guides covering every feature.
-    - [Creating custom commands](manual.md#creating-custom-commands)
-    - [Command configuration](manual.md#command-configuration)
-    - [Console settings and customisation](manual.md#console-settings-and-customisation)
-    - [Logging and output](manual.md#logging-and-output)
+- **[Adding Commands](adding-commands.md)** — authoring, registering, and pre-loading console commands.
+    - [How it works](adding-commands.md#how-it-works)
+    - [Developing commands](adding-commands.md#developing-commands)
+    - [Adding commands during runtime](adding-commands.md#adding-commands-during-runtime)
+    - [Configuring pre-loaded commands](adding-commands.md#configuring-pre-loaded-commands)
+- **[Setting up Input](setting-up-input.md)** — wiring device input into the console and configuring the components that drive it.
+    - [How it works](setting-up-input.md#how-it-works)
+    - [Configuring Input](setting-up-input.md#configuring-input)
+- **[Using the Console](using-the-console.md)** — a tour of the runtime console and how you interact with each part.
+    - [Parts of the console](using-the-console.md#parts-of-the-console)
+- **[Using the Settings](using-the-settings.md)** — exposing fields so the settings system can track, persist, and restore them.
+    - [Configuring a field for tracking](using-the-settings.md#configuring-a-field-for-tracking)
+    - [Manual operation](using-the-settings.md#manual-operation)
 - **[Changelog](changelog.md)** — release history and version notes.
 - **[About](about.md)** — overview, credits, and licensing.
     - [Overview](about.md#overview)
