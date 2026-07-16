@@ -45,6 +45,16 @@ Once marked, the field's value is serialized to disk on save and pushed back int
 - **`ReadOnly`** — the field is still serialized, but flagged as non-editable in tooling.
 - **`Ignore`** — excludes the field from tracking entirely, so it is neither scanned nor persisted.
 
+## Manual Operation
+
+Through the inspector, these fields can be collected, saved and loaded during editing or at runtime.
+
+Above: Editor buttons for manual option scanning.
+
+Above: Popup alternative of the above buttons.
+
+For more on what some of these options do, head to [`AplosSettingsManager`](aplos-settings-manager.md)
+
 
 ### Remarks
 
