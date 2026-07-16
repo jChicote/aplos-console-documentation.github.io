@@ -43,4 +43,9 @@ First public release of Aplos Console, an in-game developer console for Unity.
 
 ### Known issues
 
-_None._
+- Tested on Mac and Windows, not suited for touch screen or VR implementations yet.
+- The collapse button may be pointing in the wrong direction when toggled.
+- Duplicate debug groups being scanned may not present the correct instance from the settings view
+- Expanding the window when collapsed window is near button of screen will not reposition upwards.
+- Overflow of elements not handled correctly when scaled extremely small
+- Occasionally, input field text may not change when selecting on the commands visually
