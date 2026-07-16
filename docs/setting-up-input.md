@@ -64,6 +64,7 @@ _How to set the input components up in a scene._
 4. Assign your [`AplosCommandConfiguration`](aplos-command-configuration.md) asset to the manager's
    **Settings** field. Its `PlayerInputPrefab` is instantiated as a fallback `PlayerInput` when the
    scene has none of its own.
+   <br>
    ![Example component configurations for the Input GameObject.](assets/setting-up-input-components.png)
 5. In your Input Actions asset, define the actions the console listens for — `Submit`, `Navigate`,
    `AutoComplete`, and `ToggleDebug` — and a `"UI"` action map for the console to switch to while
