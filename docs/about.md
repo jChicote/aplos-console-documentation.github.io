@@ -4,17 +4,37 @@ Aplos Console is an in-game developer console for Unity.
 
 ## Overview
 
-_What Aplos Console is and what it's for._
-
-The Aplos Console is a console built for running custom commands during runtime gameplay. its intended for developers needingreadily available custom commands to be invokabel during gameplay.
+Aplos Console is a console built for running custom commands during runtime gameplay. It is intended for developers who need readily available custom commands that can be invoked while the game is running.
 
 ## Credits
 
-_Author and contributor acknowledgements._
-
-Jaiden Chicote - Developer
-Ayielin Gist - Developer
+- **Jaiden Chicote** — Developer
+- **Ayielin Gist** — Developer
 
 ## License
 
-_Licensing information for Aplos Console._
+Aplos Console is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+```text
+MIT License
+
+Copyright (c) 2025 Jaiden Chicote
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
