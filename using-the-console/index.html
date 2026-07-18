@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Using the Console - Aplos Console</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Using the Console";
+        var mkdocs_page_input_path = "using-the-console.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Aplos Console
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding-commands/">Adding Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setting-up-input/">Setting up Input</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Using the Console</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#parts-of-the-console">Parts of the console</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-console-view">The console view</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1-window-buttons">1. Window buttons</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-pinned-buttons">2. Pinned buttons</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-input-field">3. Input field</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-action-buttons">4. Action buttons</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-resizing-bars">5. Resizing bars</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-settings/">Using the Settings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Console</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console/">AplosConsole</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-command-constructor/">AplosConsoleCommandConstructor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Window</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-manager/">AplosWindowManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-request/">AplosWindowRequest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-settings/">AplosWindowSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-command-configuration/">AplosCommandConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-debug-command/">AplosDebugCommand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-system-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Color Picker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-palette/">AplosColorPalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-picker-view/">AplosColorPickerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../color-picker-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-settings-manager/">AplosSettingsManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-settings-scanner/">DebugSettingsScanner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Attributes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-setting-attribute/">DebugSettingAttribute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-group-attribute/">DebugGroupAttribute</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Input</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-input-adapter-base/">AplosConsoleInputAdapterBase</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-input-manager/">AplosInputManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-cursor-handler/">ConsoleCursorHandler</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-input-action-mapper/">DebugInputActionMapper</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../input-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview Log</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-logger-view/">OverviewLoggerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-log-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Aplos Console</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guides</li>
+      <li class="breadcrumb-item active">Using the Console</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="using-the-console">Using the Console</h1>
+<p>A tour of the on-screen console: what each part is and how you interact with it at runtime.</p>
+<h2 id="parts-of-the-console">Parts of the console</h2>
+<p>The console is built from a scrollable command list, an input row with its action buttons, and a per-command pin control. The numbered callouts below correspond to the labels in the image.</p>
+<p><img alt="Console view with numbered annotations." src="../assets/using-console-parts.png" /></p>
+<h3 id="the-console-view">The console view</h3>
+<p>The console view is the scrollable list that fills the window. Each row is a command, showing its identifier as a header with a short description beneath it.</p>
+<p>By default the list shows only the built-in commands (such as <code>help</code> and <code>reset</code>) together with any commands you have pinned. To reveal every registered command, run the <code>help</code> command.</p>
+<p>Rows respond to interaction:</p>
+<ul>
+<li><strong>Single click</strong> selects a row, highlighting it and dropping its command into the input field ready to run.</li>
+<li><strong>Double click</strong> submits that command immediately.</li>
+<li><strong>Keyboard navigation</strong> (arrow keys) steps through the visible matches, previewing the highlighted command as an inline suggestion.</li>
+</ul>
+<h3 id="1-window-buttons">1. Window buttons</h3>
+<ul>
+<li><strong>Settings</strong> opens the settings view.</li>
+<li><strong>Collapse</strong> shrinks and expands the window; when collapsed, only the input field and action buttons remain visible.</li>
+<li><strong>Close</strong> closes the console window.</li>
+</ul>
+<p><img alt="Collapsed console view." src="../assets/using-console-collapsed.png" />
+<br>
+<em>Above: the console window when collapsed.</em></p>
+<h3 id="2-pinned-buttons">2. Pinned buttons</h3>
+<p>Every command row carries its own pin button. Clicking it toggles whether that command is pinned, and the button changes colour to reflect its state.</p>
+<p>Pinning does two things:</p>
+<ul>
+<li><strong>Keeps the command visible.</strong> Pinned commands stay in the default resting list even when no search is active, so your most-used commands are always one click away.</li>
+<li><strong>Raises its priority.</strong> Pinned commands are sorted to the top of the list, ahead of the unpinned ones.</li>
+</ul>
+<p>Pins are saved to disk per console and restored the next time it opens, so your selection persists across sessions. Running a reset clears all pins and returns the list to its default ordering.</p>
+<h3 id="3-input-field">3. Input field</h3>
+<p>The input field is the text box where you type a command. As you type, the console filters the list and offers an inline auto-complete suggestion — the remainder of the best-matching command is shown in colour after your caret. Accepting the suggestion or selecting a row fills in the full command, and pressing submit runs it.</p>
+<h3 id="4-action-buttons">4. Action buttons</h3>
+<p>Sitting alongside the input field are two action buttons whose enabled state responds to what you have typed:</p>
+<ul>
+<li><strong>Submit</strong> runs the selected command (or, if nothing is explicitly selected, the top match in the list). It becomes active only when there is a command available to run.</li>
+<li><strong>Clear</strong> empties the input field. It becomes active whenever there is text to clear or a command ready to run.</li>
+</ul>
+<p>When neither condition is met, both buttons appear disabled, so it is always obvious whether the console has something actionable.</p>
+<h3 id="5-resizing-bars">5. Resizing bars</h3>
+<p>Resizing bars run along the edges of the window and let you readjust its size both vertically and horizontally. The minimum and maximum sizes the window allows can be adjusted through the settings.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../setting-up-input/" class="btn btn-neutral float-left" title="Setting up Input"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../using-the-settings/" class="btn btn-neutral float-right" title="Using the Settings">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../setting-up-input/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../using-the-settings/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

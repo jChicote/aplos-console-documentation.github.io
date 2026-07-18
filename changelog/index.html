@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Changelog - Aplos Console</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Changelog";
+        var mkdocs_page_input_path = "changelog.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Aplos Console
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Changelog</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#100-2026-07-14">1.0.0 — 2026-07-14</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#console">Console</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#command-system">Command system</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#colour-picker">Colour picker</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#input">Input</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#overview-log">Overview log</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#known-issues">Known issues</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding-commands/">Adding Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setting-up-input/">Setting up Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-console/">Using the Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-settings/">Using the Settings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Console</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console/">AplosConsole</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-command-constructor/">AplosConsoleCommandConstructor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Window</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-manager/">AplosWindowManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-request/">AplosWindowRequest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-settings/">AplosWindowSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-command-configuration/">AplosCommandConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-debug-command/">AplosDebugCommand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-system-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Color Picker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-palette/">AplosColorPalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-picker-view/">AplosColorPickerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../color-picker-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-settings-manager/">AplosSettingsManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-settings-scanner/">DebugSettingsScanner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Attributes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-setting-attribute/">DebugSettingAttribute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-group-attribute/">DebugGroupAttribute</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Input</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-input-adapter-base/">AplosConsoleInputAdapterBase</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-input-manager/">AplosInputManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-cursor-handler/">ConsoleCursorHandler</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-input-action-mapper/">DebugInputActionMapper</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../input-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview Log</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-logger-view/">OverviewLoggerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-log-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Aplos Console</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Changelog</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="changelog">Changelog</h1>
+<p>Release history and version notes for Aplos Console.</p>
+<h2 id="100-2026-07-14">1.0.0 — 2026-07-14</h2>
+<p>First public release of Aplos Console, an in-game developer console for Unity.</p>
+<h3 id="console">Console</h3>
+<ul>
+<li><code>AplosConsole</code> singleton that manages command registration and drives the console's open, close, and input actions.</li>
+<li><code>AplosConsoleCommandConstructor</code> for assembling and registering commands at runtime.</li>
+</ul>
+<h3 id="command-system">Command system</h3>
+<ul>
+<li><code>AplosDebugCommand</code> type for defining named, callable console commands.</li>
+<li><code>AplosCommandConfiguration</code> <code>ScriptableObject</code> that bundles command actions and console prefabs, created from the <code>AplosConsole/Aplos Command Configuration</code> asset menu.</li>
+</ul>
+<h3 id="windows">Windows</h3>
+<ul>
+<li><code>AplosWindowManager</code> that opens, tracks, and tears down runtime windows spawned by the console through an <code>AplosWindowFactory</code>.</li>
+<li><code>AplosWindowRequest</code> and <code>AplosWindowSettings</code> for describing and styling spawned windows, with a saved settings palette applied to each new window.</li>
+</ul>
+<h3 id="colour-picker">Colour picker</h3>
+<ul>
+<li><code>AplosColorPickerView</code>, an HSV-based colour picker tying together the saturation/value field, hue and alpha rails, hex + RGBA inputs, and preview swatches.</li>
+<li><code>AplosColorPalette</code> for defining and reusing named colours.</li>
+</ul>
+<h3 id="settings">Settings</h3>
+<ul>
+<li><code>AplosSettingsManager</code> that discovers <code>[DebugGroup]</code> components and their <code>[DebugSetting]</code> fields across the scene, then saves, loads, previews, and resets values through an <code>ISettingsStore</code>.</li>
+<li><code>DebugSettingsScanner</code> that discovers debug groups and settings via reflection, returning them sorted by group order then name.</li>
+<li><code>[DebugSetting]</code> and <code>[DebugGroup]</code> attributes for exposing fields and grouping them in the settings UI.</li>
+</ul>
+<h3 id="input">Input</h3>
+<ul>
+<li><code>AplosInputManager</code> that wires the console's debug input bindings to Unity's Input System, resolving the active control scheme and binding the matching mapper against a <code>PlayerInput</code>.</li>
+<li><code>DebugInputActionMapper</code> for mapping control schemes to console input, and <code>AplosConsoleInputAdapterBase</code> as the extension point for custom input backends.</li>
+</ul>
+<h3 id="overview-log">Overview log</h3>
+<ul>
+<li><code>OverviewLoggerView</code> that captures Unity log messages, renders an on-screen overview log with per-entry colouring, trims the visible list and history to configured caps, and can export the history to a text file.</li>
+</ul>
+<h3 id="known-issues">Known issues</h3>
+<ul>
+<li>Tested on Mac and Windows, not suited for touch screen or VR implementations yet.</li>
+<li>The collapse button may be pointing in the wrong direction when toggled.</li>
+<li>Duplicate debug groups being scanned may not present the correct instance from the settings view</li>
+<li>Expanding the window when collapsed window is near button of screen will not reposition upwards.</li>
+<li>Overflow of elements not handled correctly when scaled extremely small</li>
+<li>Occasionally, input field text may not change when selecting on the commands visually</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../about/" class="btn btn-neutral float-left" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../getting-started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../getting-started/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

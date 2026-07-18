@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Using the Settings - Aplos Console</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Using the Settings";
+        var mkdocs_page_input_path = "using-the-settings.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Aplos Console
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding-commands/">Adding Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setting-up-input/">Setting up Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-console/">Using the Console</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Using the Settings</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#configuring-a-field-for-tracking">Configuring a field for tracking</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#grouping-the-component">Grouping the component</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#marking-the-field">Marking the field</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#field-options">Field options</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#manual-operation">Manual operation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#remarks">Remarks</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Console</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console/">AplosConsole</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-command-constructor/">AplosConsoleCommandConstructor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Window</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-manager/">AplosWindowManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-request/">AplosWindowRequest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-settings/">AplosWindowSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-command-configuration/">AplosCommandConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-debug-command/">AplosDebugCommand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-system-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Color Picker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-palette/">AplosColorPalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-picker-view/">AplosColorPickerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../color-picker-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-settings-manager/">AplosSettingsManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-settings-scanner/">DebugSettingsScanner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Attributes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-setting-attribute/">DebugSettingAttribute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-group-attribute/">DebugGroupAttribute</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Input</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-input-adapter-base/">AplosConsoleInputAdapterBase</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-input-manager/">AplosInputManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-cursor-handler/">ConsoleCursorHandler</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-input-action-mapper/">DebugInputActionMapper</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../input-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview Log</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-logger-view/">OverviewLoggerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-log-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Aplos Console</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guides</li>
+      <li class="breadcrumb-item active">Using the Settings</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="using-the-settings-options">Using the Settings / Options</h1>
+<p>How to expose a field so the settings system can track, persist, and restore it at runtime.</p>
+<h2 id="configuring-a-field-for-tracking">Configuring a field for tracking</h2>
+<p>Aplos Console discovers settings by reflection: it scans the scene for components marked as a group, then collects the fields inside them that are marked as settings. Getting a field tracked is a matter of two attributes.</p>
+<h3 id="grouping-the-component">Grouping the component</h3>
+<p>Put <code>[DebugGroup]</code> on the <code>MonoBehaviour</code> whose fields you want to expose. The group name becomes the heading its settings are filed under, both on the settings screen and in the saved JSON.</p>
+<pre><code class="language-csharp">[DebugGroup(&quot;Console UI&quot;, Description = &quot;Console list item colors&quot;, Order = 20)]
+public class AplosConsoleView : MonoBehaviour
+{
+    // ...
+}
+</code></pre>
+<ul>
+<li><strong><code>GroupName</code></strong> (constructor argument) — the display name for the group. It cannot be null or empty.</li>
+<li><strong><code>Description</code></strong> — optional text shown in generated documentation.</li>
+<li><strong><code>Order</code></strong> — controls where the group appears; lower numbers sort earlier.</li>
+</ul>
+<p>A component without any tracked fields is skipped (and logs a warning), so <code>[DebugGroup]</code> on its own does nothing until at least one field is marked.</p>
+<h3 id="marking-the-field">Marking the field</h3>
+<p>Tag each field you want tracked with <code>[DebugSetting]</code>. The scanner walks the whole inheritance chain, so fields declared on a base class are picked up too. Only <strong>public instance fields</strong> are collected — a private or static field is ignored even with the attribute.</p>
+<pre><code class="language-csharp">[DebugSetting(Label = &quot;Suppress Scan/Load/Save Logs&quot;, Description = &quot;Hide the routine scan, load and save log messages.&quot;)]
+public bool SuppressProcessLogs = true;
+</code></pre>
+<p>Once marked, the field's value is serialized to disk on save and pushed back into the live component on load, keyed by group name and field name.</p>
+<h3 id="field-options">Field options</h3>
+<p><code>[DebugSetting]</code> takes several optional properties to refine how a field is presented and persisted:</p>
+<ul>
+<li><strong><code>Label</code></strong> — the human-readable name for the field. Falls back to the field name if left unset.</li>
+<li><strong><code>Description</code></strong> — tooltip / description text for tooling and generated docs.</li>
+<li><strong><code>Min</code></strong> / <strong><code>Max</code></strong> — value hints for <code>int</code> and <code>float</code> fields. These are hints for tooling only; they are not enforced.</li>
+<li><strong><code>ReadOnly</code></strong> — the field is still serialized, but flagged as non-editable in tooling.</li>
+<li><strong><code>Ignore</code></strong> — excludes the field from tracking entirely, so it is neither scanned nor persisted.</li>
+</ul>
+<h2 id="manual-operation">Manual operation</h2>
+<p>From the inspector, these fields can be scanned in the editor or at runtime, and saved or loaded while the game is running.</p>
+<p><img alt="Inspector editor settings buttons." src="../assets/using-the-settings-editor-buttons.png" />
+<br>
+<em>Above: the editor buttons for manual option scanning.</em></p>
+<p><img alt="Context menu popup buttons." src="../assets/using-the-settings-context-menu-buttons.png" />
+<br>
+<em>Above: the context-menu alternative to the buttons.</em></p>
+<p>For more on what each of these options does, head to <a href="../aplos-settings-manager/"><code>AplosSettingsManager</code></a>.</p>
+<h2 id="remarks">Remarks</h2>
+<p>Nothing prevents you from declaring <code>[DebugGroup]</code> on several components with the same parameters, such as the group name. This is not treated as an error, but it is worth knowing how it resolves.</p>
+<p>Settings are keyed by group name alone. Saving writes a block per component under that shared key, while loading matches only the first one it finds. Every component sharing the name therefore reads back that same first block, so they all end up with identical values and the rest are effectively discarded.</p>
+<p>This is intentional for cases like runtime windows, where each spawned window shares a group and is meant to look the same. It is a trap only if you expect each instance to keep its own values — the group name is the sole identity the serializer has, so per-instance differences are not preserved.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../using-the-console/" class="btn btn-neutral float-left" title="Using the Console"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../aplos-console/" class="btn btn-neutral float-right" title="AplosConsole">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../using-the-console/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../aplos-console/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

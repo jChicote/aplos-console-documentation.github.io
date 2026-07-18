@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Adding Commands - Aplos Console</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Adding Commands";
+        var mkdocs_page_input_path = "adding-commands.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Aplos Console
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Adding Commands</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#how-it-works">How it works</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#developing-commands">Developing commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-commands-during-runtime">Adding commands during runtime</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuring-pre-loaded-commands">Configuring pre-loaded commands</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setting-up-input/">Setting up Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-console/">Using the Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-settings/">Using the Settings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Console</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console/">AplosConsole</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-command-constructor/">AplosConsoleCommandConstructor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Window</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-manager/">AplosWindowManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-request/">AplosWindowRequest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-settings/">AplosWindowSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-command-configuration/">AplosCommandConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-debug-command/">AplosDebugCommand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-system-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Color Picker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-palette/">AplosColorPalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-picker-view/">AplosColorPickerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../color-picker-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-settings-manager/">AplosSettingsManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-settings-scanner/">DebugSettingsScanner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Attributes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-setting-attribute/">DebugSettingAttribute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-group-attribute/">DebugGroupAttribute</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Input</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-input-adapter-base/">AplosConsoleInputAdapterBase</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-input-manager/">AplosInputManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-cursor-handler/">ConsoleCursorHandler</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-input-action-mapper/">DebugInputActionMapper</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../input-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview Log</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-logger-view/">OverviewLoggerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-log-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Aplos Console</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guides</li>
+      <li class="breadcrumb-item active">Adding Commands</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="adding-commands">Adding Commands</h1>
+<p>A guide to creating console commands and getting them into Aplos Console.</p>
+<h2 id="how-it-works">How it works</h2>
+<p><em>An overview of the command system and how commands are registered and invoked.</em></p>
+<ol>
+<li><strong>Authoring</strong> — commands live as objects and can be used interchangeably.</li>
+<li><strong>Registration</strong> — command objects are registered against the console so that they show up as entries within the console command list.</li>
+<li><strong>Execution</strong> — when selected, the underlying configured action is invoked against the selected command.</li>
+</ol>
+<h2 id="developing-commands">Developing commands</h2>
+<p><em>How to author a command object and attach it in Unity.</em></p>
+<ol>
+<li>Create the command object.<ol>
+<li>Create a new class component inheriting from <a href="../aplos-console-command-constructor/"><code>AplosConsoleCommandConstructor</code></a>.</li>
+<li>Add the methods that contain the behaviour required for each command, and register them as part of the <a href="../aplos-console-command-constructor/#registercommand"><code>RegisterCommand</code></a> override.</li>
+</ol>
+</li>
+<li>In Unity, create a new GameObject and attach the recently created component.</li>
+</ol>
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">public class UnityLogCommand : AplosConsoleCommandConstructor
+{
+
+    public override void RegisterCommand(IConsoleCommandSystem commandSystem)
+    {
+        AplosDebugCommand printLog = new AplosDebugCommand(
+            &quot;printLog&quot;,
+            &quot;Command for printing some random text to Unity's Console.&quot;,
+            &quot;printLog&quot;,
+            this.LogToUnityConsoleCommand);
+
+        commandSystem.RegisterCommand(printLog);
+    }
+
+    private void LogToUnityConsoleCommand()
+    {
+        // Arrange
+
+        // Act
+        Debug.Log(&quot;Log this to Unity Console.&quot;);
+    }
+
+}
+</code></pre>
+<h2 id="adding-commands-during-runtime">Adding commands during runtime</h2>
+<p><em>How to register a command while the console is already running.</em></p>
+<ol>
+<li>Open the <a href="../aplos-console/"><code>AplosConsole</code></a> component from the inspector.</li>
+<li>Add a new entry to <a href="../aplos-console/#properties"><code>AddOnCommands</code></a> and pass in a command GameObject.</li>
+<li>Press the <strong>Refresh Command List</strong> button.</li>
+<li>Show all commands from the Console view.</li>
+</ol>
+<h2 id="configuring-pre-loaded-commands">Configuring pre-loaded commands</h2>
+<p><em>How to bundle commands into a configuration so they load with the console.</em></p>
+<ol>
+<li>Create the command GameObject.</li>
+<li>Create a prefab of the command GameObject.</li>
+<li>Locate your instance of the <a href="../aplos-command-configuration/"><code>AplosCommandConfiguration</code></a> ScriptableObject. If one does not exist, create a new command configuration by right-clicking in the Project area and navigating to <strong>Create → AplosConsole → Aplos Command Configuration</strong>.<ol>
+<li>If a new command configuration is created, set this ScriptableObject on the <a href="../aplos-console/"><code>AplosConsole</code></a> component's <code>CommandConfiguration</code> field and the <a href="../aplos-input-manager/"><code>AplosInputManager</code></a> component's <code>Settings</code> field.</li>
+</ol>
+</li>
+<li>Play the scene.</li>
+<li>Open the console by pressing <code>`</code> key.</li>
+<li>Show all commands (command: <code>help</code>).</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../getting-started/" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setting-up-input/" class="btn btn-neutral float-right" title="Setting up Input">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../getting-started/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../setting-up-input/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

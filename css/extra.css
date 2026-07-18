@@ -1,0 +1,26 @@
+/* ------------------------------------------------------------------
+   Tighten the standalone bold "mini-headers" used on the reference
+   pages — e.g. **Example**, **Parameters:**, **Inherited Members:**.
+
+   Each renders as its own paragraph and otherwise carries the theme's
+   full paragraph margins, which leaves large vertical gaps above and
+   below the label. These rules limit that vertical footprint and pull
+   the label's following content (code block, list) up against it,
+   while leaving normal paragraphs (e.g. "**Description:** text ...")
+   untouched — those are not a lone <strong> child, so they don't match.
+   ------------------------------------------------------------------ */
+
+p:has(> strong:only-child) {
+    margin-top: 0.6em;
+    margin-bottom: 0.1em;
+    line-height: 1.25;
+}
+
+/* Content directly beneath such a label hugs it. */
+p:has(> strong:only-child) + pre,
+p:has(> strong:only-child) + ul,
+p:has(> strong:only-child) + ol,
+p:has(> strong:only-child) + .highlight,
+p:has(> strong:only-child) + .codehilite {
+    margin-top: 0.1em;
+}

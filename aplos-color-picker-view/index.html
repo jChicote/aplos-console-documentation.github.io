@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>AplosColorPickerView - Aplos Console</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AplosColorPickerView";
+        var mkdocs_page_input_path = "aplos-color-picker-view.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Aplos Console
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding-commands/">Adding Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setting-up-input/">Setting up Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-console/">Using the Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-settings/">Using the Settings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Console</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console/">AplosConsole</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-command-constructor/">AplosConsoleCommandConstructor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Window</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-manager/">AplosWindowManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-request/">AplosWindowRequest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-settings/">AplosWindowSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-command-configuration/">AplosCommandConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-debug-command/">AplosDebugCommand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-system-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Color Picker</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-palette/">AplosColorPalette</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">AplosColorPickerView</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#events">Events</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#public-methods">Public methods</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../color-picker-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-settings-manager/">AplosSettingsManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-settings-scanner/">DebugSettingsScanner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Attributes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-setting-attribute/">DebugSettingAttribute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-group-attribute/">DebugGroupAttribute</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Input</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-input-adapter-base/">AplosConsoleInputAdapterBase</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-input-manager/">AplosInputManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-cursor-handler/">ConsoleCursorHandler</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-input-action-mapper/">DebugInputActionMapper</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../input-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview Log</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-logger-view/">OverviewLoggerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-log-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Aplos Console</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Color Picker</li>
+      <li class="breadcrumb-item active">AplosColorPickerView</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aploscolorpickerview">AplosColorPickerView</h1>
+<p><code>AplosColorPickerView</code> is a <code>MonoBehaviour</code> (namespace <code>AplosConsole.Views.ColorPicker</code>) that ties
+the saturation/value field, hue rail, alpha rail, hex + RGBA inputs, and preview swatches into one
+HSV-based color picker. HSVA is the single source of truth and everything else is derived from it
+on each refresh.</p>
+<details>
+<summary><strong>Inheritance</strong></summary>
+
+
+<pre><code>object
+ ↳ Object
+    ↳ Component
+       ↳ Behaviour
+          ↳ MonoBehaviour
+             ↳ AplosColorPickerView
+</code></pre>
+
+
+</details>
+<p><br></p>
+<p><strong>Inherited Members:</strong></p>
+<ul>
+<li><code>MonoBehaviour.IsInvoking()</code></li>
+<li><code>MonoBehaviour.CancelInvoke()</code></li>
+<li><code>MonoBehaviour.StartCoroutine(IEnumerator)</code></li>
+<li><code>MonoBehaviour.StopCoroutine(Coroutine)</code></li>
+<li><code>MonoBehaviour.StopAllCoroutines()</code></li>
+<li><code>Behaviour.enabled</code></li>
+<li><code>Component.gameObject</code></li>
+<li><code>Component.transform</code></li>
+<li><code>Object.name</code></li>
+<li>…</li>
+</ul>
+<p><strong><em>Namespace</em></strong>: <code>AplosConsole.Views.ColorPicker</code> <br>
+<strong><em>Implements</em></strong>: <code>IWindowIconProvider</code>, <a href="../color-picker-interfaces/#icolorpicker"><code>IColorPicker</code></a></p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CurrentColor</code></td>
+<td><code>Color</code></td>
+<td>The currently selected color, computed from the internal HSVA state. Read-only.</td>
+</tr>
+<tr>
+<td><code>WindowIcon</code></td>
+<td><code>Sprite</code></td>
+<td>The icon shown in the host window's title bar. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onColorChanged</code></td>
+<td><code>ColorChangedEvent</code></td>
+<td>Raised whenever the HSVA state changes and the UI is refreshed, passing the resulting color.</td>
+</tr>
+<tr>
+<td><code>onApplied</code></td>
+<td><code>ColorChangedEvent</code></td>
+<td>Raised when the apply button is clicked (or the <code>Show</code> callback fires), passing the committed color.</td>
+</tr>
+<tr>
+<td><code>onCancelled</code></td>
+<td><code>UnityEvent</code></td>
+<td>Raised when the cancel button is clicked (or the <code>Show</code> callback fires).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-methods">Public methods</h2>
+<h2 id="show"><code>Show</code></h2>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>initial</code> (<code>Color</code>) — Initial color to open the picker with.</li>
+<li><code>onApply</code> (<code>UnityAction&lt;Color&gt;</code>) — Callback invoked once the color is applied.</li>
+<li><code>onCancel</code> (<code>UnityAction</code>) — Callback invoked if the picker is cancelled. Defaults to <code>null</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">colorPickerView.Show(Color.white, color =&gt; { /* apply the chosen color */ });
+</code></pre>
+<p><strong>Description:</strong> Opens the picker with the given initial color, temporarily wiring the supplied callbacks to <code>onApplied</code>/<code>onCancelled</code> for this session only. Implements <a href="../color-picker-interfaces/#show"><code>IColorPicker.Show</code></a>.</p>
+<p><br></p>
+<h2 id="provide"><code>Provide</code></h2>
+
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">Sprite icon = colorPickerView.Provide();
+</code></pre>
+<p><strong>Description:</strong> Returns the <code>WindowIcon</code> sprite. Implements <code>IWindowIconProvider</code>.</p>
+<p><br></p>
+<h2 id="commit"><code>Commit</code></h2>
+
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">colorPickerView.Commit();
+</code></pre>
+<p><strong>Description:</strong> Accepts the current color as the new baseline, updating the "old" preview swatch.</p>
+<p><br></p>
+<h2 id="cancel"><code>Cancel</code></h2>
+
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">colorPickerView.Cancel();
+</code></pre>
+<p><strong>Description:</strong> Reverts the picker back to the initial color.</p>
+<p><br></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../aplos-color-palette/" class="btn btn-neutral float-left" title="AplosColorPalette"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../color-picker-interfaces/" class="btn btn-neutral float-right" title="Interfaces">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../aplos-color-palette/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../color-picker-interfaces/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

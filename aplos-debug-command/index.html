@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>AplosDebugCommand - Aplos Console</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AplosDebugCommand";
+        var mkdocs_page_input_path = "aplos-debug-command.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Aplos Console
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding-commands/">Adding Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setting-up-input/">Setting up Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-console/">Using the Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-settings/">Using the Settings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Console</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console/">AplosConsole</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-command-constructor/">AplosConsoleCommandConstructor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Window</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-manager/">AplosWindowManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-request/">AplosWindowRequest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-settings/">AplosWindowSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-command-configuration/">AplosCommandConfiguration</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">AplosDebugCommand</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#aplosdebugcommandbase">AplosDebugCommandBase</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#constructors">Constructors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aplosdebugcommand_1">AplosDebugCommand</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#properties_1">Properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#constructors_1">Constructors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#public-methods">Public methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aplosdebugcommandt">AplosDebugCommand&lt;T&gt;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constructors_2">Constructors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#public-methods_1">Public methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aplosdebugcommandt1-t2">AplosDebugCommand&lt;T1, T2&gt;</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constructors_3">Constructors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#public-methods_2">Public methods</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-system-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Color Picker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-palette/">AplosColorPalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-picker-view/">AplosColorPickerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../color-picker-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-settings-manager/">AplosSettingsManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-settings-scanner/">DebugSettingsScanner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Attributes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-setting-attribute/">DebugSettingAttribute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-group-attribute/">DebugGroupAttribute</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Input</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-input-adapter-base/">AplosConsoleInputAdapterBase</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-input-manager/">AplosInputManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-cursor-handler/">ConsoleCursorHandler</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-input-action-mapper/">DebugInputActionMapper</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../input-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview Log</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-logger-view/">OverviewLoggerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-log-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Aplos Console</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Command System</li>
+      <li class="breadcrumb-item active">AplosDebugCommand</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aplosdebugcommand">AplosDebugCommand</h1>
+<p>The Aplos command family models a runnable console command. Commands are registered with and invoked
+through <a href="../aplos-console/">AplosConsole</a>.</p>
+<h2 id="aplosdebugcommandbase">AplosDebugCommandBase</h2>
+<p>The base shared by every command variant. It stores the command's identity and usage
+text and exposes them read-only; it carries no executable delegate of its own.</p>
+<details>
+<summary><strong>Inheritance</strong></summary>
+
+
+<pre><code>object
+ ↳ AplosDebugCommandBase
+</code></pre>
+
+
+</details>
+<p><br></p>
+<p><strong>Inherited Members:</strong></p>
+<ul>
+<li><code>object.Equals(object)</code></li>
+<li><code>object.Equals(object, object)</code></li>
+<li><code>object.GetHashCode()</code></li>
+<li><code>object.GetType()</code></li>
+<li><code>object.ReferenceEquals(object, object)</code></li>
+<li><code>object.ToString()</code></li>
+</ul>
+<p><strong><em>Namespace</em></strong>: <code>AplosConsole.Commands</code></p>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CommandId</code></td>
+<td><code>string</code></td>
+<td>The identifier used to invoke the command from the console. Read-only.</td>
+</tr>
+<tr>
+<td><code>CommandDescription</code></td>
+<td><code>string</code></td>
+<td>Human-readable description shown in the command list and help output. Read-only.</td>
+</tr>
+<tr>
+<td><code>CommandFormat</code></td>
+<td><code>string</code></td>
+<td>Usage/format string describing the command's expected arguments. Read-only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="constructors">Constructors</h3>
+<h2 id="aplosdebugcommandbase-constructor"><code>AplosDebugCommandBase</code></h2>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>commandId</code> (<code>string</code>) — Identifier used to invoke the command.</li>
+<li><code>commandDescription</code> (<code>string</code>) — Description shown in the command list.</li>
+<li><code>commandFormat</code> (<code>string</code>) — Usage/format string for the command.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">public class MyCommand : AplosDebugCommandBase
+{
+    public MyCommand(string id, string description, string format)
+        : base(id, description, format) { }
+}
+</code></pre>
+<p><strong>Description:</strong> Initialises the shared metadata. Normally called via <code>base(...)</code> from a derived <code>AplosDebugCommand</code> variant rather than directly.</p>
+<p><br></p>
+<h2 id="aplosdebugcommand_1">AplosDebugCommand</h2>
+<p>A parameterless command. Wraps an <code>Action</code> that runs when the command is invoked with no
+arguments.</p>
+<details>
+<summary><strong>Inheritance</strong></summary>
+
+
+<pre><code>object
+ ↳ AplosDebugCommandBase
+    ↳ AplosDebugCommand
+</code></pre>
+
+
+</details>
+<p><br></p>
+<p><strong>Inherited Members:</strong></p>
+<ul>
+<li><code>AplosDebugCommandBase.CommandId</code></li>
+<li><code>AplosDebugCommandBase.CommandDescription</code></li>
+<li><code>AplosDebugCommandBase.CommandFormat</code></li>
+</ul>
+<p><strong><em>Namespace</em></strong>: <code>AplosConsole.Commands</code></p>
+<h3 id="properties_1">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsBuiltIn</code></td>
+<td><code>bool</code></td>
+<td>Marks the command as one that ships with the console (as opposed to a user-registered command). Defaults to <code>false</code>. Get/set.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="constructors_1">Constructors</h3>
+<h2 id="aplosdebugcommand-constructor"><code>AplosDebugCommand</code></h2>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>commandId</code> (<code>string</code>) — Identifier used to invoke the command.</li>
+<li><code>commandDescription</code> (<code>string</code>) — Description shown in the command list.</li>
+<li><code>commandFormat</code> (<code>string</code>) — Usage/format string for the command.</li>
+<li><code>command</code> (<code>Action</code>) — Action to run when the command is invoked.</li>
+<li><code>isBuiltIn</code> (<code>bool</code>) — Whether to flag the command as a built-in command. Defaults to <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">var command = new AplosDebugCommand(&quot;hello&quot;, &quot;Prints a greeting&quot;, &quot;hello&quot;, () =&gt; Debug.Log(&quot;Hi!&quot;));
+</code></pre>
+<p><strong>Description:</strong> Builds a parameterless command from the given metadata and action. Pass <code>isBuiltIn: true</code> to flag it as a built-in command.</p>
+<p><br></p>
+<h3 id="public-methods">Public methods</h3>
+<h2 id="invoke"><code>Invoke</code></h2>
+
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">command.Invoke();
+</code></pre>
+<p><strong>Description:</strong> Executes the wrapped action. No-op if the action is <code>null</code>.</p>
+<p><br></p>
+<h2 id="aplosdebugcommandt">AplosDebugCommand&lt;T&gt;</h2>
+<p>A single-argument command. Wraps an <code>Action&lt;T&gt;</code> invoked with one typed argument parsed from the
+console input.</p>
+<details>
+<summary><strong>Inheritance</strong></summary>
+
+
+<pre><code>object
+ ↳ AplosDebugCommandBase
+    ↳ AplosDebugCommand&lt;T&gt;
+</code></pre>
+
+
+</details>
+<p><br></p>
+<p><strong>Inherited Members:</strong></p>
+<ul>
+<li><code>AplosDebugCommandBase.CommandId</code></li>
+<li><code>AplosDebugCommandBase.CommandDescription</code></li>
+<li><code>AplosDebugCommandBase.CommandFormat</code></li>
+</ul>
+<p><strong><em>Namespace</em></strong>: <code>AplosConsole.Commands</code></p>
+<h3 id="constructors_2">Constructors</h3>
+<h2 id="aplosdebugcommand-constructor-2"><code>AplosDebugCommand</code></h2>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>commandId</code> (<code>string</code>) — Identifier used to invoke the command.</li>
+<li><code>commandDescription</code> (<code>string</code>) — Description shown in the command list.</li>
+<li><code>commandFormat</code> (<code>string</code>) — Usage/format string for the command.</li>
+<li><code>command</code> (<code>Action&lt;T&gt;</code>) — Action to run when the command is invoked, receiving the parsed argument.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">var command = new AplosDebugCommand&lt;int&gt;(&quot;setlevel&quot;, &quot;Sets the level&quot;, &quot;setlevel &lt;int&gt;&quot;, level =&gt; Debug.Log(level));
+</code></pre>
+<p><strong>Description:</strong> Builds a command from the given metadata that forwards a single typed argument to <code>command</code>.</p>
+<p><br></p>
+<h3 id="public-methods_1">Public methods</h3>
+<h2 id="invoke-2"><code>Invoke</code></h2>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>value</code> (<code>T</code>) — The argument to forward to the wrapped action.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">command.Invoke(5);
+</code></pre>
+<p><strong>Description:</strong> Executes the wrapped action with the supplied argument. No-op if the action is <code>null</code>.</p>
+<p><br></p>
+<h2 id="aplosdebugcommandt1-t2">AplosDebugCommand&lt;T1, T2&gt;</h2>
+<p>A two-argument command. Wraps an <code>Action&lt;T1, T2&gt;</code> invoked with two typed arguments parsed from
+the console input.</p>
+<details>
+<summary><strong>Inheritance</strong></summary>
+
+
+<pre><code>object
+ ↳ AplosDebugCommandBase
+    ↳ AplosDebugCommand&lt;T1, T2&gt;
+</code></pre>
+
+
+</details>
+<p><br></p>
+<p><strong>Inherited Members:</strong></p>
+<ul>
+<li><code>AplosDebugCommandBase.CommandId</code></li>
+<li><code>AplosDebugCommandBase.CommandDescription</code></li>
+<li><code>AplosDebugCommandBase.CommandFormat</code></li>
+</ul>
+<p><strong><em>Namespace</em></strong>: <code>AplosConsole.Commands</code></p>
+<h3 id="constructors_3">Constructors</h3>
+<h2 id="aplosdebugcommand-constructor-3"><code>AplosDebugCommand</code></h2>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>commandId</code> (<code>string</code>) — Identifier used to invoke the command.</li>
+<li><code>commandDescription</code> (<code>string</code>) — Description shown in the command list.</li>
+<li><code>commandFormat</code> (<code>string</code>) — Usage/format string for the command.</li>
+<li><code>command</code> (<code>Action&lt;T1, T2&gt;</code>) — Action to run when the command is invoked, receiving the two parsed arguments.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">var command = new AplosDebugCommand&lt;int, string&gt;(&quot;setitem&quot;, &quot;Sets an item&quot;, &quot;setitem &lt;int&gt; &lt;string&gt;&quot;, (id, name) =&gt; Debug.Log($&quot;{id}: {name}&quot;));
+</code></pre>
+<p><strong>Description:</strong> Builds a command from the given metadata that forwards two typed arguments to <code>command</code>.</p>
+<p><br></p>
+<h3 id="public-methods_2">Public methods</h3>
+<h2 id="invoke-3"><code>Invoke</code></h2>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>value</code> (<code>T1</code>) — The first argument to forward to the wrapped action.</li>
+<li><code>value2</code> (<code>T2</code>) — The second argument to forward to the wrapped action.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-csharp">command.Invoke(5, &quot;sword&quot;);
+</code></pre>
+<p><strong>Description:</strong> Executes the wrapped action with the two supplied arguments. No-op if the action is <code>null</code>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../aplos-command-configuration/" class="btn btn-neutral float-left" title="AplosCommandConfiguration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../command-system-interfaces/" class="btn btn-neutral float-right" title="Interfaces">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../aplos-command-configuration/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../command-system-interfaces/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

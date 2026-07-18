@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Setting up Input - Aplos Console</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Setting up Input";
+        var mkdocs_page_input_path = "setting-up-input.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Aplos Console
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding-commands/">Adding Commands</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Setting up Input</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#how-it-works">How it works</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuring-input">Configuring Input</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-console/">Using the Console</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../using-the-settings/">Using the Settings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Console</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console/">AplosConsole</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-command-constructor/">AplosConsoleCommandConstructor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Window</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-manager/">AplosWindowManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-request/">AplosWindowRequest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-window-settings/">AplosWindowSettings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../window-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-command-configuration/">AplosCommandConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-debug-command/">AplosDebugCommand</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../command-system-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Color Picker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-palette/">AplosColorPalette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-color-picker-view/">AplosColorPickerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../color-picker-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Settings</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-settings-manager/">AplosSettingsManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-settings-scanner/">DebugSettingsScanner</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Attributes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-setting-attribute/">DebugSettingAttribute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-group-attribute/">DebugGroupAttribute</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Input</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-console-input-adapter-base/">AplosConsoleInputAdapterBase</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../aplos-input-manager/">AplosInputManager</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../console-cursor-handler/">ConsoleCursorHandler</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../debug-input-action-mapper/">DebugInputActionMapper</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../input-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Overview Log</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-logger-view/">OverviewLoggerView</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview-log-interfaces/">Interfaces</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Aplos Console</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guides</li>
+      <li class="breadcrumb-item active">Setting up Input</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="setting-up-input">Setting up Input</h1>
+<p>A guide to wiring device input into Aplos Console and configuring the components that drive it.</p>
+<h2 id="how-it-works">How it works</h2>
+<p><em>An overview of the input components and how they communicate with one another.</em></p>
+<p>Aplos Console keeps input handling deliberately decoupled: Unity's Input System supplies the raw
+actions, a thin set of Aplos components translate those actions into console calls, and the console
+never needs to know which device or control scheme produced them. Four pieces do the work:</p>
+<ul>
+<li><a href="../aplos-input-manager/"><code>AplosInputManager</code></a> — orchestrates set-up. It finds (or spawns) a
+  <code>PlayerInput</code>, resolves the active control scheme, and binds the matching mapper.</li>
+<li><a href="../debug-input-action-mapper/"><code>DebugInputActionMapper</code></a> — one per control scheme (the built-in
+  <code>DebugKeyboardAndMouseInputBinding</code> covers keyboard &amp; mouse). It subscribes to the relevant
+  <code>InputAction</code>s and forwards each to the console.</li>
+<li><a href="../aplos-console/"><code>AplosConsole</code></a> — implements <a href="../console-interfaces/#iconsoleinputprovider"><code>IConsoleInputProvider</code></a>,
+  the contract the mapper calls into, and raises open/close events.</li>
+<li><a href="../aplos-console-input-adapter-base/"><code>UnityInputSystemAdapter</code></a> — an
+  <a href="../input-interfaces/#iaplosconsoleinputadapter"><code>IAplosConsoleInputAdapter</code></a> that reacts to those
+  open/close events and reroutes which input map is active.</li>
+</ul>
+<p><img alt="Diagram showing the three interaction flows between the Aplos Console input components: set-up and binding, device input reaching the console, and console state routing the active input map." src="../assets/setting-up-input-flow.svg" /></p>
+<p>The components communicate along three distinct flows:</p>
+<ol>
+<li>
+<p><strong>Set-up &amp; binding.</strong> On <code>Start</code>, the <a href="../aplos-console-input-adapter-base/"><code>UnityInputSystemAdapter</code></a> calls
+   <a href="../aplos-input-manager/#startplayerinput"><code>AplosInputManager.StartPlayerInput()</code></a>. The manager locates a <code>PlayerInput</code> in the scene — or
+   instantiates the fallback <code>PlayerInputPrefab</code> when none exists — resolves the active control
+   scheme, injects that <code>PlayerInput</code> into every <a href="../debug-input-action-mapper/"><code>DebugInputActionMapper</code></a>, and calls <code>BindInput()</code>
+   on the one whose <code>SchemaName</code> matches. That mapper subscribes its callbacks to the relevant
+   <code>InputAction</code>s.</p>
+</li>
+<li>
+<p><strong>Device input → console.</strong> When the player triggers an action, the Input System fires
+   <code>InputAction.performed</code>. The bound mapper's callback forwards it to the console through
+   <a href="../console-interfaces/#iconsoleinputprovider"><code>IConsoleInputProvider</code></a> — <code>SubmitPressed</code>, <code>NavigatePressed</code>, <code>AutoCompletePressed</code>, or
+   <code>ToggleDebug</code> — so the console reacts without any direct dependency on the input device.</p>
+</li>
+<li>
+<p><strong>Console state → input routing.</strong> When the console opens or closes it raises <code>OnOpenConsole</code> /
+   <code>OnCloseConsole</code>. The <a href="../aplos-console-input-adapter-base/"><code>UnityInputSystemAdapter</code></a> listens for these and calls
+   <code>PlayerInput.SwitchCurrentActionMap</code>, switching to the <code>"UI"</code> map while the console is open and
+   restoring the previous gameplay map when it closes, so console typing and game controls never
+   fight over the same input.</p>
+</li>
+</ol>
+<p>Because each seam is an interface, any part can be swapped: implement
+<a href="../input-interfaces/#iaplosconsoleinputadapter"><code>IAplosConsoleInputAdapter</code></a> (or derive from
+<a href="../aplos-console-input-adapter-base/"><code>AplosConsoleInputAdapterBase</code></a>) to drive a different input
+system, and add a <a href="../debug-input-action-mapper/"><code>DebugInputActionMapper</code></a> per control scheme you want to support.</p>
+<h2 id="configuring-input">Configuring Input</h2>
+<p><em>How to set the input components up in a scene.</em></p>
+<ol>
+<li>Add an <a href="../aplos-input-manager/"><code>AplosInputManager</code></a> component to a GameObject, and put an input adapter — the built-in
+   <a href="../aplos-console-input-adapter-base/"><code>UnityInputSystemAdapter</code></a> — on the <strong>same</strong> GameObject. On <code>Awake</code> the manager resolves its
+   adapter with <a href="../input-interfaces/#iaplosconsoleinputadapter"><code>GetComponent&lt;IAplosConsoleInputAdapter&gt;()</code></a>, so the two must share a GameObject.</li>
+<li>Add a <a href="../debug-input-action-mapper/"><code>DebugInputActionMapper</code></a> for each control scheme you support (use
+   <code>DebugKeyboardAndMouseInputBinding</code> for keyboard &amp; mouse), and list them in the manager's
+   <strong>Debug Input Bindings</strong> field.</li>
+<li>Set each mapper's <code>SchemaName</code> to exactly match a control scheme name in your Input Actions
+   asset. The manager binds the mapper whose <code>SchemaName</code> matches the active scheme; if none
+   matches, a warning is logged and no input is bound.</li>
+<li>Assign your <a href="../aplos-command-configuration/"><code>AplosCommandConfiguration</code></a> asset to the manager's
+   <strong>Settings</strong> field. Its <code>PlayerInputPrefab</code> is instantiated as a fallback <code>PlayerInput</code> when the
+   scene has none of its own.
+   <br>
+   <img alt="Example component configurations for the Input GameObject." src="../assets/setting-up-input-components.png" /></li>
+<li>In your Input Actions asset, define the actions the console listens for — <code>Submit</code>, <code>Navigate</code>,
+   <code>AutoComplete</code>, and <code>ToggleDebug</code> — and a <code>"UI"</code> action map for the console to switch to while
+   its open.
+   <br>
+   <img alt="Example input action map used for the operation of the console." src="../assets/setting-up-input-action-map.png" /></li>
+<li><em>(Optional)</em> To integrate a different input system, derive from
+   <a href="../aplos-console-input-adapter-base/"><code>AplosConsoleInputAdapterBase</code></a> and implement a matching
+   <a href="../debug-input-action-mapper/"><code>DebugInputActionMapper</code></a> rather than using the Unity Input System
+   defaults.</li>
+<li><em>(Optional)</em> Add a <a href="../console-cursor-handler/"><code>ConsoleCursorHandler</code></a> component to a GameObject in the scene to let the
+   console manage the cursor. It listens for the console's open/close events, freeing and showing
+   the cursor while the console is open and restoring the game's previous cursor state on close.
+   Omit it to leave the cursor entirely under game control.</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../adding-commands/" class="btn btn-neutral float-left" title="Adding Commands"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../using-the-console/" class="btn btn-neutral float-right" title="Using the Console">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../adding-commands/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../using-the-console/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
