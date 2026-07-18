@@ -1,4 +1,4 @@
-name: ci
+name: Deploy Aplos Console
 on:
   push:
     branches:
