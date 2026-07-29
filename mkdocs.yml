@@ -49,3 +49,6 @@ nav:
   - Overview Log:
       - OverviewLoggerView: overview-logger-view.md
       - Interfaces: overview-log-interfaces.md
+
+plugins:
+  - no-sitemap
