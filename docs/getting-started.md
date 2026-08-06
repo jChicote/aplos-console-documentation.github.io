@@ -4,12 +4,12 @@ New to Aplos Console? Start here.
 
 ## Adding the console to your scene
 
-There are only two primary objects you need to get started, and both ship as prefabs in `Assets/Release`. Drag each one into your scene:
+There are only two primary objects you need to get started, and both ship as prefabs in `Assets/Lumencore-Studios/AplosConsole`. Drag each one into your scene:
 
 - **AplosConsole** — the console itself, complete with its own canvas. It bundles [`AplosConsole`](aplos-console.md), the console view, the [`AplosWindowManager`](aplos-window-manager.md), and the [`AplosSettingsManager`](aplos-settings-manager.md), so no further wiring is needed.
 - **DebugInput** — the input object. It carries the [`AplosInputManager`](aplos-input-manager.md), a `UnityInputSystemAdapter`, the `DebugKeyboardAndMouseInputBinding` mapper for keyboard & mouse, and a [`ConsoleCursorHandler`](console-cursor-handler.md).
 
-![The AplosConsole and DebugInput prefabs dragged from the Release folder into the scene hierarchy.](assets/getting-started-starting-objects.png)
+![The AplosConsole and DebugInput prefabs dragged from the package folder into the scene hierarchy.](assets/getting-started-starting-objects.png)
 <br>
 _Above: both prefabs placed in the scene, alongside the EventSystem._
 
@@ -17,12 +17,22 @@ Additional scene dependencies for input:
 
 - **EventSystem** — a standard Unity GameObject (**GameObject → UI → Event System**). The console is uGUI-driven and relies on it to focus the input field and route clicks, so without one the console renders but does not respond.
 
-### What else is in the Release folder
+### What else is in the package folder
 
-The other two assets are already wired up for you, but it is worth knowing what they do:
+The other assets are already wired up for you, but it is worth knowing what they do:
 
 - **CommandConfiguration** — an [`AplosCommandConfiguration`](aplos-command-configuration.md) asset holding the prefabs the console needs, including its pre-loaded commands. Both prefabs above already reference it, on the [`AplosConsole`](aplos-console.md) component's `CommandConfiguration` field and the [`AplosInputManager`](aplos-input-manager.md) component's `Settings` field.
 - **Default_Commands** — a sample [`AplosConsoleCommandConstructor`](aplos-console-command-constructor.md) providing a set of scene commands, such as `scene_log_performance` and `scene_freeze`. It is referenced by **CommandConfiguration**, which is how those commands reach the console at load.
+- **Debug_InputSystem_Asset** — the Input Actions asset the console's default input is built against. See [Setting up Input](setting-up-input.md) for how it is used, and how to work against your own asset instead.
+- **Runtime** — the package's own scripts, prefabs, and art. Nothing in here needs to be touched to use the console.
+- **Sample** — the `Example_AplosConsole` scene, a ready-made scene with the console, input, and a set of example commands already in place. Open it to see everything below working before wiring your own scene.
+
+## The Aplos Console editor menu
+
+Two editor windows ship with the package, both under **Window → Aplos Console**:
+
+- **Utility** — a summary window showing the installed version, with shortcuts to the documentation, this guide, and the changelog. It opens by itself the first time the package is imported into a project, and can be reopened from the menu at any time.
+- **Documentation** — opens the documentation site in your browser. When the site cannot be reached, it offers to serve the copy bundled with the package on `localhost:8080` instead, so the documentation still works offline.
 
 ## Your first command
 

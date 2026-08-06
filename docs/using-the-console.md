@@ -45,6 +45,8 @@ Pins are saved to disk per console and restored the next time it opens, so your 
 
 The input field is the text box where you type a command. As you type, the console filters the list and offers an inline auto-complete suggestion — the remainder of the best-matching command is shown in colour after your caret. Accepting the suggestion or selecting a row fills in the full command, and pressing submit runs it.
 
+Matching is case-sensitive, so what you type has to match a command's casing exactly to filter it in or auto-complete against it.
+
 ### 4. Action buttons
 
 Sitting alongside the input field are two action buttons whose enabled state responds to what you have typed:

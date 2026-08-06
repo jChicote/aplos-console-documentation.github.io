@@ -6,9 +6,9 @@ Welcome to the official documentation for **Aplos Console** — an in-game devel
 
 ### Guides
 
-- **[Getting Started](getting-started.md)** — installation, setup, and your first command.
-    - [Installation](getting-started.md#installation)
+- **[Getting Started](getting-started.md)** — setup, the editor menu, and your first command.
     - [Adding the console to your scene](getting-started.md#adding-the-console-to-your-scene)
+    - [The Aplos Console editor menu](getting-started.md#the-aplos-console-editor-menu)
     - [Your first command](getting-started.md#your-first-command)
 - **[Adding Commands](adding-commands.md)** — authoring, registering, and pre-loading console commands.
     - [How it works](adding-commands.md#how-it-works)

@@ -46,7 +46,7 @@ object
 | `IsOpen` | `bool` | Whether the console is currently open (active). |
 | `CommandConfiguration` | `AplosCommandConfiguration` | Required dependency. Serialized reference to the `AplosCommandConfiguration` asset that supplies the default command set. |
 | `AplosWindow` | `GameObject` | Required dependency. Serialized reference to the console window `GameObject`; its active state determines the initial open/closed state. |
-| `AddOnCommands` | `List<AplosConsoleCommandConstructor>` | List of additional [`AplosConsoleCommandConstructor`](aplos-console-command-constructor.md)s registered during initialisation. |
+| `AddOnCommands` | `List<AplosConsoleCommandConstructor>` | List of additional [`AplosConsoleCommandConstructor`](aplos-console-command-constructor.md)s registered during initialisation, ahead of those from `CommandConfiguration`. Each constructor class contributes its commands once per initialisation; a class reached again — through either source — is skipped with a warning. |
 
 ## Events
 
@@ -101,7 +101,7 @@ var command = new AplosDebugCommand("hello", "Prints a greeting", "hello", () =>
 AplosConsole.Instance.RegisterCommand(command);
 ```
 
-**Description:** Registers a command so that it is collected and presented in the console's command display list.
+**Description:** Registers a command so that it is collected and presented in the console's command display list. A command whose `CommandId` is already registered is ignored, and a warning is logged; the command already holding the id keeps it.
 
 <br>
 
@@ -121,7 +121,7 @@ AplosDebugCommand command = AplosConsole.Instance.RegisterCommand(
     "hello", "Prints a greeting", "hello", () => Debug.Log("Hi!"));
 ```
 
-**Description:** Builds and registers a parameterless command in one call and returns it so the caller can keep a handle (e.g. to unregister it later).
+**Description:** Builds and registers a parameterless command in one call and returns it so the caller can keep a handle (e.g. to unregister it later). The command is always returned, including when its id was already taken and the registration was ignored.
 
 <br>
 
@@ -149,7 +149,7 @@ AplosConsole.Instance.UnregisterCommand("hello");
 AplosConsole.Instance.RefreshCommands();
 ```
 
-**Description:** Rebuilds the command list back to the default commands and raises `OnRefresh`.
+**Description:** Rebuilds the command list back to the default commands and raises `OnRefresh`. The list is cleared first, then rebuilt from the built-in commands, `AddOnCommands`, and `CommandConfiguration`; commands registered at runtime are carried back over afterwards, unless a rebuilt command has since claimed the same id.
 
 <br>
 

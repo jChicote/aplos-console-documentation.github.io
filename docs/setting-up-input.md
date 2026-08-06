@@ -66,9 +66,14 @@ _How to set the input components up in a scene._
    scene has none of its own.
    <br>
    ![Example component configurations for the Input GameObject.](assets/setting-up-input-components.png)
-5. In your Input Actions asset, define the actions the console listens for — `Submit`, `Navigate`,
-   `AutoComplete`, and `ToggleDebug` — and a `"UI"` action map for the console to switch to while
-   its open.
+5. Use the **Debug_InputSystem_Asset** Input Actions asset that ships in
+   `Assets/Lumencore-Studios/AplosConsole`. It already defines everything the console expects, and
+   the bundled `PlayerInputPrefab` is set up against it, so no further work is needed to get input
+   running.
+   <br>
+   To drive the console from your own Input Actions asset instead, define the actions the console
+   listens for — `Submit`, `Navigate`, `AutoComplete`, and `ToggleDebug` — and a `"UI"` action map
+   for the console to switch to while its open.
    <br>
    ![Example input action map used for the operation of the console.](assets/setting-up-input-action-map.png)
 6. _(Optional)_ To integrate a different input system, derive from
