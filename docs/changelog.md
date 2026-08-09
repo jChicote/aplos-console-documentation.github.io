@@ -12,6 +12,7 @@ A maintenance release covering package structure, editor tooling, and reliabilit
 - Editor code moved into its own `AplosConsoleEditor` assembly, separate from the `AplosConsoleScripts` runtime assembly, so editor-only types no longer reach player builds.
 - The `Debug_InputSystem_Asset` Input Actions asset now ships with the package rather than living in the host project.
 - Added the `Example_AplosConsole` sample scene under `Sample`, with the console, input, and example commands already wired up.
+- The sample scene no longer registers the example commands twice through the console inspector.
 
 ### Editor
 
@@ -29,14 +30,20 @@ A maintenance release covering package structure, editor tooling, and reliabilit
 
 - Settings are written to a temporary file and swapped into place, so an interrupted save can no longer leave a half-written configuration on disk.
 - A truncated settings file is now treated as missing values, leaving the current settings untouched rather than failing to load.
+- Authored-default snapshots for destroyed components are now pruned, so repeatedly opening windows no longer grows the snapshot table without bound.
 
 ### Windows
 
 - Fixed the window resize handles.
+- Window Scale now changes the console's on-screen size linearly rather than curving as the value increments. Its range is now 0.5–3, and a zero value is clamped so it cannot collapse the canvas.
 
 ### Overview log
 
 - The overview log no longer recurses when handling a log raised by its own display, and missing display dependencies are reported once instead of on every message.
+- Entries expire on unscaled time, so the log keeps recycling while the game is paused at a timescale of zero instead of accumulating on screen.
+- The visible entry cap is enforced as each message arrives rather than only when settings are applied, so a burst of logging no longer floods the display.
+- Entries that destroy themselves are dropped from the active list immediately, and negative display or history caps are treated as zero instead of trimming past the end of the list.
+- A log entry prefab missing its `OverviewLoggerEntry` component is reported once and the spawned object cleaned up, and showing, hiding, and colouring entries tolerate missing references instead of throwing.
 
 ## 1.0.0 — 2026-07-14
 
