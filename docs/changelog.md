@@ -2,6 +2,22 @@
 
 Release history and version notes for Aplos Console.
 
+## 1.1.1 — 2026-10-09
+
+A patch release covering the bundled offline documentation and licence corrections.
+
+### Documentation
+
+- The offline documentation bundled with the package is now a single `index.html` under `Documentation/offline-documentation`, replacing the multi-page `offline-site` folder.
+- **Window → Aplos Console → Documentation** and the Utility window links open the offline copy directly in the browser instead of serving it on `localhost:8080`. Links to a specific page, such as the changelog, land on that page.
+
+### Licences
+
+- The package now ships under the Unity Asset Store EULA notice rather than the MIT licence.
+- Added `Third-Party Notices.txt` and the full licence texts for bundled third-party content under `Licenses`.
+- The Starter Assets grid materials and textures used by the sample scene are now local copies under `Runtime/Materials/StarterAssets_Materials_Copy`, and the notices point at that location.
+- Every TextMesh Pro component now uses the bundled Inter font rather than the TextMesh Pro default font.
+
 ## 1.1.0 — Unreleased
 
 A maintenance release covering package structure, editor tooling, and reliability fixes.
