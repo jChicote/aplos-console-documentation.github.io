@@ -32,11 +32,7 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
           <a href=".." class="icon icon-home"> Aplos Console
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
+        </a>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
@@ -58,9 +54,11 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#adding-the-console-to-your-scene">Adding the console to your scene</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#what-else-is-in-the-release-folder">What else is in the Release folder</a>
+    <li class="toctree-l3"><a class="reference internal" href="#what-else-is-in-the-package-folder">What else is in the package folder</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-aplos-console-editor-menu">The Aplos Console editor menu</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#your-first-command">Your first command</a>
     </li>
@@ -178,23 +176,32 @@
                 <h1 id="getting-started">Getting Started</h1>
 <p>New to Aplos Console? Start here.</p>
 <h2 id="adding-the-console-to-your-scene">Adding the console to your scene</h2>
-<p>There are only two primary objects you need to get started, and both ship as prefabs in <code>Assets/Release</code>. Drag each one into your scene:</p>
+<p>There are only two primary objects you need to get started, and both ship as prefabs in <code>Assets/Lumencore-Studios/AplosConsole</code>. Drag each one into your scene:</p>
 <ul>
 <li><strong>AplosConsole</strong> — the console itself, complete with its own canvas. It bundles <a href="../aplos-console/"><code>AplosConsole</code></a>, the console view, the <a href="../aplos-window-manager/"><code>AplosWindowManager</code></a>, and the <a href="../aplos-settings-manager/"><code>AplosSettingsManager</code></a>, so no further wiring is needed.</li>
 <li><strong>DebugInput</strong> — the input object. It carries the <a href="../aplos-input-manager/"><code>AplosInputManager</code></a>, a <code>UnityInputSystemAdapter</code>, the <code>DebugKeyboardAndMouseInputBinding</code> mapper for keyboard &amp; mouse, and a <a href="../console-cursor-handler/"><code>ConsoleCursorHandler</code></a>.</li>
 </ul>
-<p><img alt="The AplosConsole and DebugInput prefabs dragged from the Release folder into the scene hierarchy." src="../assets/getting-started-starting-objects.png" />
+<p><img alt="The AplosConsole and DebugInput prefabs dragged from the package folder into the scene hierarchy." src="../assets/getting-started-starting-objects.png" />
 <br>
 <em>Above: both prefabs placed in the scene, alongside the EventSystem.</em></p>
 <p>Additional scene dependencies for input:</p>
 <ul>
 <li><strong>EventSystem</strong> — a standard Unity GameObject (<strong>GameObject → UI → Event System</strong>). The console is uGUI-driven and relies on it to focus the input field and route clicks, so without one the console renders but does not respond.</li>
 </ul>
-<h3 id="what-else-is-in-the-release-folder">What else is in the Release folder</h3>
-<p>The other two assets are already wired up for you, but it is worth knowing what they do:</p>
+<h3 id="what-else-is-in-the-package-folder">What else is in the package folder</h3>
+<p>The other assets are already wired up for you, but it is worth knowing what they do:</p>
 <ul>
 <li><strong>CommandConfiguration</strong> — an <a href="../aplos-command-configuration/"><code>AplosCommandConfiguration</code></a> asset holding the prefabs the console needs, including its pre-loaded commands. Both prefabs above already reference it, on the <a href="../aplos-console/"><code>AplosConsole</code></a> component's <code>CommandConfiguration</code> field and the <a href="../aplos-input-manager/"><code>AplosInputManager</code></a> component's <code>Settings</code> field.</li>
 <li><strong>Default_Commands</strong> — a sample <a href="../aplos-console-command-constructor/"><code>AplosConsoleCommandConstructor</code></a> providing a set of scene commands, such as <code>scene_log_performance</code> and <code>scene_freeze</code>. It is referenced by <strong>CommandConfiguration</strong>, which is how those commands reach the console at load.</li>
+<li><strong>Debug_InputSystem_Asset</strong> — the Input Actions asset the console's default input is built against. See <a href="../setting-up-input/">Setting up Input</a> for how it is used, and how to work against your own asset instead.</li>
+<li><strong>Runtime</strong> — the package's own scripts, prefabs, and art. Nothing in here needs to be touched to use the console.</li>
+<li><strong>Sample</strong> — the <code>Example_AplosConsole</code> scene, a ready-made scene with the console, input, and a set of example commands already in place. Open it to see everything below working before wiring your own scene.</li>
+</ul>
+<h2 id="the-aplos-console-editor-menu">The Aplos Console editor menu</h2>
+<p>Two editor windows ship with the package, both under <strong>Window → Aplos Console</strong>:</p>
+<ul>
+<li><strong>Utility</strong> — a summary window showing the installed version, with shortcuts to the documentation, this guide, and the changelog. It opens by itself the first time the package is imported into a project, and can be reopened from the menu at any time.</li>
+<li><strong>Documentation</strong> — opens the documentation site in your browser. When the site cannot be reached, it offers to serve the copy bundled with the package on <code>localhost:8080</code> instead, so the documentation still works offline.</li>
 </ul>
 <h2 id="your-first-command">Your first command</h2>
 <ol>
@@ -250,7 +257,6 @@
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
