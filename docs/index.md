@@ -24,7 +24,7 @@ Welcome to the official documentation for **Aplos Console** — an in-game devel
     - [Configuring a field for tracking](using-the-settings.md#configuring-a-field-for-tracking)
     - [Manual operation](using-the-settings.md#manual-operation)
 - **[Changelog](changelog.md)** — release history and version notes.
-- **[About](about.md)** — overview, credits, and licensing.
+- **[About](about.md)** — overview, credits, and license terms.
     - [Overview](about.md#overview)
     - [Credits](about.md#credits)
     - [License](about.md#license)
